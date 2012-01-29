@@ -1,8 +1,9 @@
 RewriteEngine On
-RewriteBase /
+RewriteBase /~unn_w11025228/
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?/$1 [L]
 
 php_flag magic_quotes_gpc off
+php_flag short_open_tags off
