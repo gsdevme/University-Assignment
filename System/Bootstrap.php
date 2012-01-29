@@ -40,15 +40,27 @@
 		 */
 		public function setupEnvironment()
 		{
+			// Setup Server for Error Reporting
 			error_reporting(-1);
 			ini_set('display_errors', 1);
 			ini_set('display_startup_errors', 1);
 
+			// Enable gzip compression
+			ini_set('zlib.output_compression', 1);
+			ini_set('zlib.output_compression_level', '9');
+
+			// Increase file cache 
+			ini_set('realpath_cache_size', '1024K');
+			ini_set('realpath_cache_ttl', '3600');
+
+			// Set Timezone, and Charset of UTF-8
 			ini_set('date.timezone', 'Europe/London');
 			ini_set('default_charset', 'UTF-8');
 
+			// Disable shorttag
 			ini_set('short_open_tag', 0);
 
+			// Disable magic quotes
 			ini_set('magic_quotes_gpc', 0);
 
 			return self::$_instance;
@@ -86,13 +98,27 @@
 		}
 
 		/**
+		 * Sets the PDO Connection settings
+		 * 
+		 * @param array $connectionDetails 
+		 */
+		public function setPDOConnectionDetails(stdClass $connectionDetails)
+		{
+			$this->_config->connectionDetails = $connectionDetails;
+			
+			return self::$_instance;
+		}
+
+		/**
 		 *
 		 * @param type $location
 		 * @return type 
 		 */
 		public function addFileLocation($location)
 		{
-			return array_push($this->_fileLocations, self::$_instance->_config->root . $location);
+			array_push($this->_fileLocations, self::$_instance->_config->root . $location);
+			
+			return self::$_instance;
 		}
 
 		/**
@@ -129,6 +155,15 @@
 		public function getNumyspaceId()
 		{
 			return ( string ) $this->_config->numyspaceId;
+		}
+
+		/**
+		 *
+		 * @return type 
+		 */
+		public function getPDOConnectionDetails()
+		{
+			return ( object ) $this->_config->connectionDetails;
 		}
 
 	}
