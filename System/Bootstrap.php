@@ -31,7 +31,7 @@
 				}
 			}
 
-			throw new Exception('Class ' . $class . ' not found');
+			throw new ClassNotFoundException('Class ' . $class . ' not found');
 		}
 
 		/**
@@ -72,7 +72,7 @@
 		 */
 		public function configurePaths($user=null)
 		{
-			$this->_config->root = realpath(dirname(__FILE__)) . '/';
+			$this->_config->root = realpath(dirname(__FILE__)) . '/../';
 			$this->addFileLocation(null);
 
 			$this->_config->url = (((isset($_SERVER['HTTPS'])) && (!empty($_SERVER['HTTPS']))) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/';
