@@ -11,18 +11,24 @@
 	 */
 	$root = realpath(dirname(__FILE__)) . '/';
 
-	require_once $root . 'System/Bootstrap.php';
 	require_once $root . 'functions.php';
+	require_once $root . 'System/Exceptions/ClassNotFoundException.php';
+	require_once $root . 'System/Bootstrap.php';
+	
 
 	// Remove variable from memory
 	unset($root);
 
 	try {
 		$bootstrap = Bootstrap::getInstance()->setupEnvironment()->setupAutoLoader()->configurePaths('~unn_w11025228');
+		
 		$bootstrap->addFileLocation('System/');
+		$bootstrap->addFileLocation('System/Exceptions/');
+		$bootstrap->addFileLocation('Application/Controllers/');
 
 		$router = new Router(new Request($bootstrap));
-		$router->route($router->getRoute());
+		
+		ControllerFactory::route($router->getRoute());
 	} catch (Exception $e) {
 		pre($e);
 	}
