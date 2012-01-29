@@ -27,12 +27,12 @@
 				if (($method->isPublic()) && ($class->isInstantiable())) {
 					// is there any arguments ?					
 					if ((count($route) == 0) && ($method->getNumberOfRequiredParameters() == 0)) {
-						return $method->invoke($class->newInstance(Bootstrap::getInstance()), null);
+						return $method->invoke($class->newInstance(Bootstrap::getInstance(), $class->name, $method->name), null);
 					}
 
 					// are we sending the correct amount of parameters ?
 					if (count($route) >= $method->getNumberOfRequiredParameters()) {
-						return $method->invokeArgs($class->newInstance(Bootstrap::getInstance()), $route);
+						return $method->invokeArgs($class->newInstance(Bootstrap::getInstance(), $class->name, $method->name), $route);
 					}
 
 					throw new RouterException('The controller method was not sent the correct amount of parameters', 404);
