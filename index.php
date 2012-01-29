@@ -49,6 +49,6 @@
 			exit;
 		}
 
-		ControllerFactory::error(array($e));
+		ControllerFactory::route(array('error', 'index', $e));
 	}
 	
