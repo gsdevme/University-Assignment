@@ -1,14 +1,23 @@
 <?php
 
+	/**
+	 * @author Gavin Staniforth
+	 * @version 1.0, 29th January 2012
+	 *
+	 * This class is used to store the View data and then allow the method render() to instantiate them
+	 */		
 	class ViewFactory
 	{
 
 		private static $_instance;
-		protected $views;
+		private $_views;
 
+		/**
+		 * Assigns an array to the view property
+		 */
 		private function __construct()
 		{
-			$this->views = array();
+			$this->_views = array();
 		}
 
 		public static function getInstance()
@@ -22,18 +31,18 @@
 
 		/**
 		 * Add a view to the ADT Queue
+		 * 
 		 * @param string $name
 		 * @param array $data
-		 * @param bool $shared 
 		 */
 		public function addView($name, array $args=null)
 		{
 			$file = Bootstrap::getInstance()->getRoot() . 'Application/Views/' . $name . '.php';
 			$view = sprintf('%u', crc32($file));
 
-			if (!isset($this->views[$view])) {
+			if (!isset($this->_views[$view])) {
 				if (is_readable($file)) {
-					$this->views[$view] = ( object ) array('file' => $file, 'args' => $args, 'name' => $name);
+					$this->_views[$view] = ( object ) array('file' => $file, 'args' => $args, 'name' => $name);
 					return self::$_instance;
 				}
 
@@ -45,10 +54,10 @@
 
 		public function render()
 		{
-			if (!empty($this->views)) {
+			if (!empty($this->_views)) {
 				ob_start();
 				
-				foreach ($this->views as $view) {
+				foreach ($this->_views as $view) {
 					new View($view->file, $view->args);
 				}
 
