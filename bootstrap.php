@@ -3,11 +3,13 @@
 	class Bootstrap
 	{		
 		private static $_instance;
-		private $_config;
+		private $_config, $_fileLocations;
 
 		private function __construct()
 		{
 			$this->_config = new stdClass;
+			$this->_fileLocations = array();
+
 		}	
 
 		public static function getInstance()
@@ -21,13 +23,15 @@
 
 		public static function autoLoader($class)
 		{
-			$file = self::$_instance->_config->root . str_replace('_', '/', $class) . '.php';
+			foreach(self::$_instance->_fileLocations as $file){
+				$file = $file . str_replace('_', '/', $class) . '.php';
 
-			if(is_readable($file)){
-				return require_once $file;
+				if(is_readable($file)){
+					return require_once $file;
+				}				
 			}
 
-			throw new Exception('Class '.$class.' not found');
+			throw new Exception('Class '.$class.' not found within ' . ifsetor($file));
 		}
 
 		public function setupEnvironment()
@@ -56,6 +60,8 @@
 		public function configurePaths($user=null)
 		{
 			$this->_config->root = realpath(dirname(__FILE__)) . '/';
+			$this->addFileLocation(null);
+
 			$this->_config->url = (((isset($_SERVER['HTTPS'])) && (!empty($_SERVER['HTTPS']))) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/';
 
 			if($_SERVER['HTTP_HOST'] == 'www.numyspace.co.uk'){
@@ -64,6 +70,11 @@
 			}
 
 			return self::$_instance;
+		}
+
+		public function addFileLocation($location)
+		{
+			return array_push($this->_fileLocations, self::$_instance->_config->root . $location);
 		}
 
 		public function getUrl()

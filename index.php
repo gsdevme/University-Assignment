@@ -18,8 +18,10 @@
 	// Remove variable from memory
 	unset($root);
 
+	$bootstrap->addFileLocation('System/');
+
 	try{
-		new System_Router(new System_Request($bootstrap));		
+		new Router(new Request($bootstrap));		
 	}catch(Exception $e){
 		pre($e);
 	}
