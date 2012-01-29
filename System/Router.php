@@ -17,17 +17,10 @@
 			$this->_defaultMethod = 'index';
 
 			$this->_route = ($request->getRequest() !== null) ? explode('/', $request->getRequest()) : array($this->_defaultController, $this->_defaultMethod);
-		}
-
-		/**
-		 *
-		 * @param array $route 
-		 */
-		public static function route(array $route)
-		{
-			$controller = array_shift($route);
-
-			pre($controller);
+			
+			if(count($this->_route) < 2){
+				array_push($this->_route, $this->_defaultMethod);
+			}
 		}
 
 		public function getRoute()
