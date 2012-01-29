@@ -1,15 +1,17 @@
 <?php
 
-	class Home
+	class Home extends Controller
 	{
-		public function __construct()
+		public function __construct($bootstrap)
 		{
+			parent::__construct($bootstrap);
+			
 			pre('hello');
 		}
 
-		public function index()
+		public function index($foo, $a=null)
 		{
-			pre($this);
+			echo '<pre>' . print_r(func_get_args(), 1) . '</pre>';
 		}
 
 	}
