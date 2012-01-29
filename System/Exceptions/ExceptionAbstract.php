@@ -5,7 +5,7 @@
 
 		private $_previous;
 
-		public function __construct($message, $code, Exception $previous=null)
+		public function __construct($message, $code=0, Exception $previous=null)
 		{
 			$this->_previous = $previous;
 
@@ -21,4 +21,5 @@
 		{
 			return $this->_previous;
 		}
+
 	}
