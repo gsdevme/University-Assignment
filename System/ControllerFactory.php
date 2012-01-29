@@ -34,7 +34,7 @@
 				// catch it for Line 37
 			}
 
-			throw new RouterException('The controller/method could not be found', 404, ifsetor($e));
+			throw new RouterException('The controller/method could not be found | Controller: ' . ifsetor($controller) . ', Method: ' . ifsetor($method), 404, ifsetor($e));
 		}
 
 		/**
