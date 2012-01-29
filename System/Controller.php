@@ -6,7 +6,7 @@
 		
 		public function __construct(Bootstrap $bootstrap)
 		{
-			$this->$bootstrap = $bootstrap;
+			$this->bootstrap = $bootstrap;
 		}
 		
 		protected function view($view)
