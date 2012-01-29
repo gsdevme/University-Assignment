@@ -12,9 +12,8 @@
 	$root = realpath(dirname(__FILE__)) . '/';
 
 	require_once $root . 'functions.php';
-	require_once $root . 'System/Exceptions/ClassNotFoundException.php';
+	require_once $root . 'System/Exceptions/ExceptionAbstract.php';
 	require_once $root . 'System/Bootstrap.php';
-	
 
 	// Remove variable from memory
 	unset($root);
@@ -29,6 +28,13 @@
 		$router = new Router(new Request($bootstrap));
 		
 		ControllerFactory::route($router->getRoute());
+		
+		// Remove variable from memory
+		unset($router);
+		unset($bootstrap);
 	} catch (Exception $e) {
-		pre($e);
+		echo '<pre>' . print_r($e->getMessage(), 1) . '</pre>';
+		echo '<pre>' . print_r($e->getCode(), 1) . '</pre>';
+		
+		echo '<pre>' . print_r($e->getPrevious(), 1) . '</pre>';
 	}
