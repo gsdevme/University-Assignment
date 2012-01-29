@@ -19,5 +19,10 @@
 		{
 			return ViewFactory::getInstance()->render();
 		}
+		
+		protected function route(array $route)
+		{
+			return ControllerFactory::route($route);
+		}
 
 	}
