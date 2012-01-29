@@ -1,10 +1,16 @@
 <?php
 
-	class System_Request
+	class Request
 	{
 	
+		
 		private $_request;
 
+		/**
+		*  
+		*
+		* @param Bootstrap $bootstrap 
+		*/
 		public function __construct(Bootstrap $bootstrap)
 		{
 			if (isValue($_SERVER['REQUEST_URI'])) {
@@ -23,6 +29,7 @@
 
         /**
          * Common sense
+         *
          * @return string 
          */
         public function getRequest()
@@ -32,6 +39,7 @@
 
         /**
          * Cleans the request string, removes any / from the string
+         *
          * @param string $value request string
          * @return string 
          */
