@@ -1,6 +1,6 @@
 <?php
 
-	class ClassNotFoundException extends Exception
+	class ClassNotFoundException extends ExceptionAbstract
 	{
-
+		
 	}
