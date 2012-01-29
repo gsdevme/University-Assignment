@@ -1,5 +1,13 @@
 <?php
 
+	/**
+	 * @author Gavin Staniforth
+	 * @version 1.0, 29th January 2012
+	 *
+	 * This is file is used to assign the default Controller/Method.
+	 * It then checks against a null request
+	 * 
+	 */	
 	class Router
 	{
 
@@ -8,7 +16,8 @@
 		private $_defaultMethod;
 
 		/**
-		 *
+		 * 
+		 * 
 		 * @param Request $request 
 		 */
 		public function __construct(Request $request)
@@ -26,7 +35,8 @@
 		}
 
 		/**
-		 *
+		 * Common sense
+		 * 
 		 * @return array  
 		 */
 		public function getRoute()

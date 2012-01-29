@@ -1,9 +1,20 @@
 <?php
 
+	/**
+	 * @author Gavin Staniforth
+	 * @version 1.0, 29th January 2012
+	 *
+	 * This class is used to filter the value for cross site scripting attacks
+	 */	
 	class XSSFilter
 	{
 
-		public static function filter(&$value, $key)
+		/**
+		 * This method will get the data type and either cast or filter using UTF-8
+		 * 
+		 * @param mixed $value
+		 */
+		public static function filter(&$value)
 		{
 			switch (gettype($value)) {
 				case "object":

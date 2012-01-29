@@ -1,11 +1,20 @@
 <?php
 
+	/**
+	 * @author Gavin Staniforth
+	 * @version 1.0, 29th January 2012
+	 *
+	 * This class is used like an factory pattern class and creates objects, 
+	 * it uses reflection to make it so(ha clever comment joke...)
+	 */		
 	class ControllerFactory
 	{
 
 		/**
-		 *
+		 * Routes the array to the Controller/Action/Args using Reflection
+		 * 
 		 * @param array $route 
+		 * @return object
 		 */
 		public static function route(array $route)
 		{
@@ -31,7 +40,7 @@
 
 				throw new RouterException('The method is either not public or the class is not isInstantiable', 404);
 			} catch (ClassNotFoundException $e) {
-				// catch it for Line 37
+				// catch it for Line 48
 			}
 
 			$route = func_get_args();

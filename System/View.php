@@ -1,5 +1,11 @@
 <?php
 
+	/**
+	 * @author Gavin Staniforth
+	 * @version 1.0, 29th January 2012
+	 *
+	 * This class allows views to load elements, from their runtime state
+	 */		
 	class View
 	{
 
@@ -10,7 +16,6 @@
 		 * 
 		 * @param string $file
 		 * @param array $args 
-		 * @param bool $xssFilter
 		 */
 		public function __construct($file, array $args=null)
 		{
