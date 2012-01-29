@@ -31,7 +31,7 @@
 				}
 			}
 
-			throw new Exception('Class ' . $class . ' not found within ' . ifsetor($file));
+			throw new Exception('Class ' . $class . ' not found');
 		}
 
 		/**
