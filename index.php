@@ -12,6 +12,7 @@
 	$root = realpath(dirname(__FILE__)) . '/';
 
 	require_once $root . 'functions.php';
+	require_once $root . 'connectionDetails.php';
 	require_once $root . 'System/Exceptions/ExceptionAbstract.php';
 	require_once $root . 'System/Bootstrap.php';
 
@@ -20,12 +21,19 @@
 
 	try {
 		// Lets setup the environment for server/local then setup an autoloader and load configurations
-		$bootstrap = Bootstrap::getInstance()->setupEnvironment()->setupAutoLoader()->configurePaths('~unn_w11025228');
+		$bootstrap = Bootstrap::getInstance()
+			->setupEnvironment()
+			->setupAutoLoader()
+			->setPDOConnectionDetails($PDOConnection)
+			->configurePaths('~unn_w11025228');
+		
+		// Remove variable from memory
+		unset($PDOConnection);
 
 		// Lets add the locations to our bootstrap
-		$bootstrap->addFileLocation('System/');
-		$bootstrap->addFileLocation('System/Exceptions/');
-		$bootstrap->addFileLocation('Application/Controllers/');
+		$bootstrap->addFileLocation('System/')
+			->addFileLocation('System/Exceptions/')
+			->addFileLocation('Application/Controllers/');
 
 		$router = new Router(new Request($bootstrap));
 
