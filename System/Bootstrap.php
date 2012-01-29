@@ -65,6 +65,13 @@
 
 			return self::$_instance;
 		}
+		
+		public function setErrorException()
+		{
+			set_error_handler(create_function('$errno, $errstr, $errfile, $errline', 'throw new ErrorException($errstr, 0, $errno, $errfile, $errline);'));
+			
+			return self::$_instance;
+		}
 
 		/**
 		 *
