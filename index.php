@@ -25,6 +25,7 @@
 			->setupEnvironment()
 			->setupAutoLoader()
 			->setPDOConnectionDetails($PDOConnection)
+			->setErrorException()
 			->configurePaths('~unn_w11025228');
 		
 		// Remove variable from memory
