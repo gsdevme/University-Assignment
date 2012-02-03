@@ -56,9 +56,9 @@
 			return ViewFactory::getInstance()->addView($view, $args);
 		}
 
-		protected function render()
+		protected function render($cache=false)
 		{
-			return ViewFactory::getInstance()->render();
+			return ViewFactory::getInstance()->render($cache);
 		}
 		
 		protected function route(array $route)
