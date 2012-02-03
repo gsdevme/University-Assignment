@@ -4,9 +4,9 @@
 		<?php $this->element('meta'); ?>
 	</head>
 	
-	<body>		
-		<h1>Error !</h1>
+	<body>	
+		<?php $this->element('header'); ?>
 
-		<?php pre($exception); ?>
+		<h1>404 - Not Found</h1>
 	</body>
 </html>
