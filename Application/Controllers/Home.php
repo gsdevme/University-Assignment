@@ -1,17 +1,14 @@
 <?php
 
-	class Home extends Controller
+	class Home extends AbstractController
 	{
-		public function __construct($bootstrap)
-		{
-			parent::__construct($bootstrap);
-			
-			pre('hello');
-		}
 
-		public function index($foo, $a=null)
-		{
-			echo '<pre>' . print_r(func_get_args(), 1) . '</pre>';
+		public function index()
+		{						
+			$this->view('home', array(
+				'foobar' => 'Lemon',
+				'x' => array('foo', 'moo')
+			))->render();
 		}
 
 	}
