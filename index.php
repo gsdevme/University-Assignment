@@ -6,6 +6,8 @@
 	 *
 	 * This MVC Framework was created for use with PHP 5.2.6 due to University servers being PHP 5.2.6
 	 *
+	 * The Framework was adapted from my PHP 5.3.3+ framework named Panda. http://gsdev.me/
+	 *
 	 * This is the main target or any link, it includes some core configuration files and classes then 
 	 * creates an instance of the request & router to kickstart the MVC
 	 */
@@ -21,15 +23,17 @@
 
 	try {
 		// Lets setup the environment for server/local then setup an autoloader and load configurations
-		$bootstrap = Bootstrap::getInstance()
+		$bootstrap = Bootstrap::getInstance($_SERVER)
 			->setupEnvironment()
 			->setupAutoLoader()
 			->setPDOConnectionDetails($PDOConnection)
 			->setErrorException()
 			->configurePaths('~unn_w11025228');
-		
+
 		// Remove variable from memory
 		unset($PDOConnection);
+		unset($_SERVER);
+		unset($_ENV);
 
 		// Lets add the locations to our bootstrap
 		$bootstrap->addFileLocation('System/')
@@ -42,7 +46,7 @@
 
 		// Remove variable from memory
 		unset($router);
-		unset($bootstrap);
+		unset($bootstrap);		
 	} catch (Exception $e) {
 		$obStatus = ob_get_status();
 
@@ -60,4 +64,5 @@
 
 		ControllerFactory::route(array('error', 'index', $e));
 	}
+	
 	
