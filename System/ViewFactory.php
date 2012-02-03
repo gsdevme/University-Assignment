@@ -52,6 +52,11 @@
 			return self::$_instance;
 		}
 
+		/**
+		 * Renders all views onto the page
+		 * 
+		 * @param bool 
+		 */
 		public function render()
 		{
 			if (!empty($this->_views)) {
