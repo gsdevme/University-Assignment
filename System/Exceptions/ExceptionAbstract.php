@@ -15,9 +15,9 @@
 		/**
 		 * This method adds a method that is already within PHP 5.3 just missing from PHP 5.2.x
 		 * 
-		 * @param Exception 
+		 * @return Exception 
 		 */
-		public function getPrevious()
+		public function getPreviousException()
 		{
 			return $this->_previous;
 		}
