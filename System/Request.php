@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	 * @author Gavin Staniforth
+	 * @author Gavin Staniforth <Email:gsdev@me.com> <Arpanet:http://gsdev.me> @gsphpdev
 	 * @version 1.0, 29th January 2012
 	 *
 	 * This is file is used to parse the request_uri

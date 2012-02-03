@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	 * @author Gavin Staniforth
+	 * @author Gavin Staniforth <Email:gsdev@me.com> <Arpanet:http://gsdev.me> @gsphpdev
 	 * @version 1.0, 29th January 2012
 	 *
 	 * This class is used to store the View data and then allow the method render() to instantiate them
@@ -11,6 +11,7 @@
 
 		private static $_instance;
 		private $_views;
+
 		/**
 		 * Assigns an array to the view property
 		 */
@@ -33,6 +34,7 @@
 		 * 
 		 * @param string $name
 		 * @param array $data
+		 * @return object returns the ViewFactory instance
 		 */
 		public function addView($name, array $args=null)
 		{
@@ -55,9 +57,9 @@
 		 * Renders all views onto the page
 		 * Regex from http://stackoverflow.com/questions/5312349/minifying-final-html-output-using-regular-expressions-with-codeigniter
 		 * 
-		 * @param bool 
+		 * @return bool 
 		 */
-		public function render($cache=false)
+		public function render()
 		{
 			if (!empty($this->_views)) {
 				ob_start(create_function('$buffer', 'return preg_replace(\'#(?ix)(?>[^\S ]\s*|\s{2,})(?=(?:(?:[^<]++|<(?!/?(?:textarea|pre)\b))*+)(?:<(?>textarea|pre)\b|\z))#\', null, $buffer);'));

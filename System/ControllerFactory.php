@@ -1,11 +1,11 @@
 <?php
 
 	/**
-	 * @author Gavin Staniforth
+	 * @author Gavin Staniforth <Email:gsdev@me.com> <Arpanet:http://gsdev.me> @gsphpdev
 	 * @version 1.0, 29th January 2012
 	 *
 	 * This class is used like an factory pattern class and creates objects, 
-	 * it uses reflection to make it so(ha clever comment joke...)
+	 * it uses reflection to 'make it so' (ha clever comment joke...)
 	 */		
 	class ControllerFactory
 	{

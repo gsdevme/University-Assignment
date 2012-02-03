@@ -1,10 +1,23 @@
 <?php
 
+	/**
+	 * @author Gavin Staniforth <Email:gsdev@me.com> <Arpanet:http://gsdev.me> @gsphpdev
+	 * @version 1.0, 29th January 2012
+	 *
+	 * This class is an abstract exception
+	 */	
 	abstract class ExceptionAbstract extends Exception
 	{
 
 		private $_previous;
 
+		/**
+		* 
+		* 
+		* @param string $message
+		* @param int $code
+		* @param Exception $previous
+		*/
 		public function __construct($message, $code=0, Exception $previous=null)
 		{
 			$this->_previous = $previous;

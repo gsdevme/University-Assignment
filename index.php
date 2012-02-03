@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	 * @author Gavin Staniforth
+	 * @author Gavin Staniforth <Email:gsdev@me.com> <Arpanet:http://gsdev.me> @gsphpdev
 	 * @version 1.0, 29th January 2012
 	 *
 	 * This MVC Framework was created for use with PHP 5.2.6 due to University servers being PHP 5.2.6

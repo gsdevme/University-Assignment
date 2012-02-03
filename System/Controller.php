@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	 * @author Gavin Staniforth
+	 * @author Gavin Staniforth <Email:gsdev@me.com> <Arpanet:http://gsdev.me> @gsphpdev
 	 * @version 1.0, 3rd Feburary 2012
 	 *
 	 * This class is an abstract controll for all user defined controllers
