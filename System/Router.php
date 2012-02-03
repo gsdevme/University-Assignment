@@ -17,7 +17,6 @@
 
 		/**
 		 * 
-		 * 
 		 * @param Request $request 
 		 */
 		public function __construct(Request $request)
@@ -32,6 +31,8 @@
 			if(count($this->_route) < 2){
 				array_push($this->_route, $this->_defaultMethod);
 			}
+
+			array_walk($this->_route, array($this, '_urldecode'));
 		}
 
 		/**
@@ -42,6 +43,17 @@
 		public function getRoute()
 		{
 			return ( array ) $this->_route;
+		}
+
+		/**
+		* This method will call urldecode upon the value.. 
+		*
+		* @param string $value This is urlenoded string
+		* @return string
+		*/
+		private static function _urldecode($value)
+		{
+			return urldecode($value);
 		}
 
 	}
