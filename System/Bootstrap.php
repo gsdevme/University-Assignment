@@ -6,16 +6,18 @@
 		private static $_instance;
 		private $_config, $_fileLocations;
 
-		private function __construct()
+		private function __construct(array $server)
 		{
 			$this->_config = new stdClass;
 			$this->_fileLocations = array();
+
+			$this->_config->server = (object)$server;
 		}
 
-		public static function getInstance()
+		public static function getInstance(array $server=null)
 		{
 			if (!self::$_instance instanceof self) {
-				self::$_instance = new self;
+				self::$_instance = new self($server);
 			}
 
 			return self::$_instance;
@@ -163,6 +165,17 @@
 		{
 			return ( string ) $this->_config->numyspaceId;
 		}
+
+		public function getServerParam($param)
+		{
+			$param = (strtoupper($param));
+			return $this->_config->server->$param;
+		}
+
+		public function setServerUri($value)
+		{
+			return $this->_config->server->REQUEST_URI = $value;
+		}		
 
 		/**
 		 *
