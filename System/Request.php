@@ -19,17 +19,20 @@
 		 */
 		public function __construct(Bootstrap $bootstrap)
 		{
-			if (isValue($_SERVER['REQUEST_URI'])) {
-				$_SERVER['REQUEST_URI'] = substr(str_replace($_SERVER['SCRIPT_NAME'], null, $_SERVER['REQUEST_URI']), 1);
+			$request = $bootstrap->getServerParam('request_uri');
+			$file = $bootstrap->getServerParam('script_name');
+
+			if (isValue($request)) {
+				$request = substr(str_replace($file, null, $request), 1);
 
 				// Remove Numyspace ID if any
-				$_SERVER['REQUEST_URI'] = ($bootstrap->isNumyspace()) ? str_replace($bootstrap->getNumyspaceId(), null, $_SERVER['REQUEST_URI']) : $_SERVER['REQUEST_URI'];
+				$request = ($bootstrap->isNumyspace()) ? str_replace($bootstrap->getNumyspaceId(), null, $request) : $request;
 
-				$_SERVER['REQUEST_URI'] = $this->_clean($_SERVER['REQUEST_URI']);
+				$request = $this->_clean($request);
 
 				// If its still a value
-				if (isValue($_SERVER['REQUEST_URI'])) {
-					$this->_request = $_SERVER['REQUEST_URI'];
+				if (isValue($request)) {
+					$this->_request = $request;
 				}
 			}
 		}
