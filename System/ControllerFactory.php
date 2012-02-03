@@ -17,7 +17,10 @@
 		 * @return object
 		 */
 		public static function route(array $route)
-		{
+		{			
+			// Store actual Route, within the REQUEST_URI server
+			Bootstrap::getInstance()->setServerUri(implode('/', $route));
+
 			$controller = ucfirst(urldecode(array_shift($route)));
 
 			try {
@@ -40,7 +43,7 @@
 
 				throw new RouterException('The method is either not public or the class is not isInstantiable', 404);
 			} catch (ClassNotFoundException $e) {
-				// catch it for Line 48
+				// catch it for Line 51
 			}
 
 			$route = func_get_args();
@@ -58,8 +61,8 @@
 		{
 			$route = array_merge(array(
 				'NotFound',
-				'Index'
-				), $args);
+				'index'
+			), $args);
 
 			return ControllerFactory::route($route);
 		}
