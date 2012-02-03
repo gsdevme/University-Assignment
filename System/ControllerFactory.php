@@ -18,11 +18,11 @@
 		 */
 		public static function route(array $route)
 		{
-			$controller = ucfirst(array_shift($route));
+			$controller = ucfirst(urldecode(array_shift($route)));
 
 			try {
 				$class = new ReflectionClass($controller);
-				$method = new ReflectionMethod($controller, array_shift($route));
+				$method = new ReflectionMethod($controller, urldecode(array_shift($route)));
 
 				if (($method->isPublic()) && ($class->isInstantiable())) {
 					// is there any arguments ?					
