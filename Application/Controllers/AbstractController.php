@@ -6,9 +6,9 @@
 		
 		public function __construct(Bootstrap $bootstrap, $controller, $method)
 		{
-			$this->css = $bootstrap->getUrl() . 'Public/css/';
-			$this->img = $bootstrap->getUrl() . 'Public/img/';
 			$this->url = $bootstrap->getUrl();
+			$this->css = $this->url . 'Public/css/';
+			$this->img = $this->url . 'Public/img/';
 			
 			$breadcrumb = array(
 				$controller,
