@@ -11,7 +11,6 @@
 
 		private static $_instance;
 		private $_views;
-
 		/**
 		 * Assigns an array to the view property
 		 */
@@ -54,13 +53,14 @@
 
 		/**
 		 * Renders all views onto the page
+		 * Regex from http://stackoverflow.com/questions/5312349/minifying-final-html-output-using-regular-expressions-with-codeigniter
 		 * 
 		 * @param bool 
 		 */
-		public function render()
+		public function render($cache=false)
 		{
 			if (!empty($this->_views)) {
-				ob_start();
+				ob_start(create_function('$buffer', 'return preg_replace(\'#(?ix)(?>[^\S ]\s*|\s{2,})(?=(?:(?:[^<]++|<(?!/?(?:textarea|pre)\b))*+)(?:<(?>textarea|pre)\b|\z))#\', null, $buffer);'));
 				
 				foreach ($this->_views as $view) {
 					new View($view->file, $view->args);
