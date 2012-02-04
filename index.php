@@ -12,6 +12,7 @@
 	 * creates an instance of the request & router to kickstart the MVC
 	 */
 	$root = realpath(dirname(__FILE__)) . '/';
+	$debug = true;
 
 	require_once $root . 'functions.php';
 	require_once $root . 'connectionDetails.php';
@@ -38,7 +39,8 @@
 		// Lets add the locations to our bootstrap
 		$bootstrap->addFileLocation('System/')
 			->addFileLocation('System/Exceptions/')
-			->addFileLocation('Application/Controllers/');
+			->addFileLocation('Application/Controllers/')
+			->addFileLocation('Application/Models/');
 
 		$router = new Router(new Request($bootstrap));
 
@@ -57,9 +59,15 @@
 			}
 		}
 
-		if ($e->getCode() == 404) {
-			ControllerFactory::notFound(array($e));
-			exit;
+		if($debug !== true){
+			switch($e->getCode() ){
+				case 404:
+					ControllerFactory::notFound(array($e));
+					exit;
+				default:
+					die('Woops');
+					exit;
+			}
 		}
 
 		ControllerFactory::route(array('error', 'index', $e));
