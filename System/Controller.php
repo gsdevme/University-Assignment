@@ -12,7 +12,7 @@
 		protected $bootstrap, $controller, $method;
 
 		/**
-		* 
+		* Assigns some useful information into the controller for use later in the app
 		*
 		* @param Bootstrap $bootstrap
 		* @param string $controller
@@ -26,39 +26,25 @@
 		}
 
 		/**
+		* Used as a shortcut to add a view to the ViewFactory
 		* 
-		*
-		* @param string $model This is the name of the model
-		* @param array $args
-		* @return object
-		*/
-		protected function model($model, array $args=null)
-		{
-			return Factory::model($model, $args);
-		}
-
-		/**
-		*
-		*
-		* @param string $library This is the name of the library
-		* @param array $args
-		* @return object
-		*/
-		protected function library($library, array $args=null)
-		{
-			return Factory::library($library, $args);
-		}
-
-		/**
+		* @param string $view this is the name of the view
+		* @param array $args this is any arguments you wish to send to the view
+		* @return ViewFactory it returns a ViewFactory object so you can chain the methods
 		*/
 		protected function view($view, array $args=null)
 		{
 			return ViewFactory::getInstance()->addView($view, $args);
 		}
 
-		protected function render($cache=false)
+		/**
+		* Used as a shortcut to render all views within the ViewFactory
+		* 
+		* @return bool returns true once its completed and no errors etc
+		*/
+		protected function render()
 		{
-			return ViewFactory::getInstance()->render($cache);
+			return ViewFactory::getInstance()->render();
 		}
 		
 		protected function route(array $route)
