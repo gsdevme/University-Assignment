@@ -11,9 +11,7 @@
 	class Router
 	{
 
-		private $_route;
-		private $_defaultController;
-		private $_defaultMethod;
+		private $_route, $_defaultController, $_defaultMethod;
 
 		/**
 		 * 
