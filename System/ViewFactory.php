@@ -20,6 +20,9 @@
 			$this->_views = array();
 		}
 
+		/**
+		* Singleton ftw
+		*/
 		public static function getInstance()
 		{
 			if (!self::$_instance instanceof self) {
