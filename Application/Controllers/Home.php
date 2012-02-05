@@ -5,9 +5,9 @@
 
 		public function index()
 		{						
+			
 			$this->view('home', array(
-				'foobar' => 'Lemon',
-				'x' => array('foo', 'moo')
+				'holidays' => Factory::library('HolidayXML')->getHolidayObjects(),
 			))->render();
 		}
 
