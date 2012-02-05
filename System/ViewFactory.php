@@ -22,6 +22,9 @@
 
 		/**
 		 * Singleton ftw
+		 *
+		 * @static
+		 * @param ViewFactory
 		 */
 		public static function getInstance()
 		{
@@ -34,6 +37,8 @@
 
 		/**
 		* This is need so if an error occours we can clear the ViewFactory of views
+		*
+		* @static
 		*/
 		public static function deleteInstance()
 		{

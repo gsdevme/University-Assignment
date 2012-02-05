@@ -16,6 +16,7 @@
 		* Since we dont have namespaces we are going to run into the problem with a User Model & User Controller,
 		* therefore Models are appended with "Model", so Class UserModel{}
 		*
+		* @static
 		* @param string $name this is the name of the model
 		* @param array $args this is any arguments you wish to send 
 		* @return object the model object
@@ -28,9 +29,10 @@
 		/**
 		 * Loads a model
 		 * 
-		 * @param type $name
+		 * @static		 
+		 * @param string $name
 		 * @param array $args
-		 * @return type 
+		 * @return object 
 		 */
 		public static function library($name, array $args=null)
 		{
@@ -40,10 +42,11 @@
 		/**
 		 * Loads classes via the constructor or through getInstance singleton method
 		 * 
-		 * @param type $name
+		 * @static
+		 * @param string $name
 		 * @param array $args
-		 * @param type $type
-		 * @return type 
+		 * @param string $type
+		 * @return object 
 		 */
 		private static function _loader($name, array $args=null, $type=null)
 		{

@@ -47,6 +47,7 @@
 		/**
 		 * This method will call urldecode upon the value.. 
 		 *
+		 * @static
 		 * @param string $value This is urlenoded string
 		 * @return string
 		 */

@@ -13,6 +13,7 @@
 		/**
 		 * Routes the array to the Controller/Action/Args using Reflection
 		 * 
+		 * @static
 		 * @param array $route 
 		 * @return object
 		 */
@@ -54,6 +55,7 @@
 		/**
 		 * This method will create a NotFound object, which is used for show a 404 error
 		 * 
+		 * @static
 		 * @param array $args
 		 * @return object
 		 */

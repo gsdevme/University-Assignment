@@ -13,6 +13,7 @@
 		/**
 		 * This method will get the data type and either cast or filter using UTF-8
 		 * 
+		 * @static
 		 * @param mixed $value (by ref) the value which we need to filter for XSS attacks...
 		 */
 		public static function filter(&$value)
