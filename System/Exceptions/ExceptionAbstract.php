@@ -5,19 +5,19 @@
 	 * @version 1.0, 29th January 2012
 	 *
 	 * This class is an abstract exception
-	 */	
+	 */
 	abstract class ExceptionAbstract extends Exception
 	{
 
 		private $_previous;
 
 		/**
-		* 
-		* 
-		* @param string $message
-		* @param int $code
-		* @param Exception $previous
-		*/
+		 * Matches the PHP 5.3 consturct while saving allowing previous exception within PHP 5.2
+		 * 
+		 * @param string $message
+		 * @param int $code
+		 * @param Exception $previous
+		 */
 		public function __construct($message, $code=0, Exception $previous=null)
 		{
 			$this->_previous = $previous;

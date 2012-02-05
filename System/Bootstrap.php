@@ -6,14 +6,25 @@
 		private static $_instance;
 		private $_config, $_fileLocations;
 
+		/**
+		 * Sets up some properties, and assigns the $_SERVER within the bootstrap.
+		 * 
+		 * @param array $server 
+		 */
 		private function __construct(array $server)
 		{
 			$this->_config = new stdClass;
 			$this->_fileLocations = array();
 
-			$this->_config->server = (object)$server;
+			$this->_config->server = ( object ) $server;
 		}
 
+		/**
+		 * for the Singleton class, so we can get the $_instance
+		 * 
+		 * @param array $server
+		 * @return Bootstrap
+		 */
 		public static function getInstance(array $server=null)
 		{
 			if (!self::$_instance instanceof self) {
@@ -23,8 +34,15 @@
 			return self::$_instance;
 		}
 
+		/**
+		 * Autoloader method will auto include the file we need for our class
+		 * 
+		 * @param string $class
+		 * @return mixed 
+		 */
 		public static function autoLoader($class)
 		{
+			// Could of used set_include_path but its likely to be slower, also due to shared server environment it might be blocked
 			foreach (self::$_instance->_fileLocations as $file) {
 				$file = $file . str_replace('_', '/', $class) . '.php';
 
@@ -37,8 +55,10 @@
 		}
 
 		/**
-		 *
-		 * @return type 
+		 * This is some ugly code, but since the server env and dev are so different 
+		 * its a must, also its not possible to change the server ones
+		 * 
+		 * @return Bootstrap
 		 */
 		public function setupEnvironment()
 		{
@@ -62,22 +82,30 @@
 			// Disable shorttag
 			ini_set('short_open_tag', 0);
 
-			// Disable magic quotes
+			// Disable magic quotes (Lovely magic quotes enabled on the server.... a developers worst nightmare)
 			ini_set('magic_quotes_gpc', 0);
 
 			return self::$_instance;
 		}
-		
+
+		/**
+		 * Lets configure our errors to throw rather then to just add to the buffer
+		 * 
+		 * I will never understand why this isn't the default in PHP...
+		 * 
+		 * @return Bootstrap
+		 */
 		public function setErrorException()
 		{
 			set_error_handler(create_function('$errno, $errstr, $errfile, $errline', 'throw new ErrorException($errstr, 0, $errno, $errfile, $errline);'));
-			
+
 			return self::$_instance;
 		}
 
 		/**
-		 *
-		 * @return type 
+		 * Register our autoload method using the spl_autoload ..
+		 * 
+		 * @return Bootstrap 
 		 */
 		public function setupAutoLoader()
 		{
@@ -87,9 +115,10 @@
 		}
 
 		/**
-		 *
-		 * @param type $user
-		 * @return type 
+		 * This is setup our paths, also fixing if its on numyspace
+		 * 
+		 * @param string $user
+		 * @return Bootstrap
 		 */
 		public function configurePaths($user=null)
 		{
@@ -109,30 +138,33 @@
 		/**
 		 * Sets the PDO Connection settings
 		 * 
-		 * @param array $connectionDetails 
+		 * @param stdClass $connectionDetails
+		 * @return Bootstra[ 
 		 */
 		public function setPDOConnectionDetails(stdClass $connectionDetails)
 		{
 			$this->_config->connectionDetails = $connectionDetails;
-			
+
 			return self::$_instance;
 		}
 
 		/**
-		 *
-		 * @param type $location
-		 * @return type 
+		 * Adds another folder location to search for within our autoloader
+		 * 
+		 * @param string $location
+		 * @return Bootstrap
 		 */
 		public function addFileLocation($location)
 		{
 			array_push($this->_fileLocations, self::$_instance->_config->root . $location);
-			
+
 			return self::$_instance;
 		}
 
 		/**
-		 *
-		 * @return type 
+		 * Gets the server URL
+		 * 
+		 * @return string
 		 */
 		public function getUrl()
 		{
@@ -140,8 +172,9 @@
 		}
 
 		/**
-		 *
-		 * @return type 
+		 * Gets the server Root (or if your a windows fanboy that would be PATH)
+		 * 
+		 * @return string 
 		 */
 		public function getRoot()
 		{
@@ -149,8 +182,9 @@
 		}
 
 		/**
-		 *
-		 * @return type 
+		 * Boolean based on if we are running on numyspace or not
+		 * 
+		 * @return boolean 
 		 */
 		public function isNumyspace()
 		{
@@ -158,28 +192,42 @@
 		}
 
 		/**
-		 *
-		 * @return type 
+		 * The numyspace ID
+		 * 
+		 * @return string 
 		 */
 		public function getNumyspaceId()
 		{
 			return ( string ) $this->_config->numyspaceId;
 		}
 
+		/**
+		 * Gets one of the $_SERVER values from our $_config->server
+		 * 
+		 * @param string $param
+		 * @return mixed 
+		 */
 		public function getServerParam($param)
 		{
 			$param = (strtoupper($param));
 			return $this->_config->server->$param;
 		}
 
+		/**
+		 * Sets the REQUEST_URI param within the object 
+		 * 
+		 * @param string $value
+		 * @return boolean
+		 */
 		public function setServerUri($value)
 		{
 			return $this->_config->server->REQUEST_URI = $value;
-		}		
+		}
 
 		/**
-		 *
-		 * @return type 
+		 * Returns the PDO Connection details
+		 * 
+		 * @return stdClass 
 		 */
 		public function getPDOConnectionDetails()
 		{

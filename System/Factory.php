@@ -25,12 +25,27 @@
 			return self::_loader(ucfirst($name) . 'Model', $args, 'model');	
 		}
 
+		/**
+		 * Loads a model
+		 * 
+		 * @param type $name
+		 * @param array $args
+		 * @return type 
+		 */
 		public static function library($name, array $args=null)
 		{
 			return self::_loader(ucfirst($name), $args, 'library');	
 		}
 
-		private static function _loader($name, array $args=null, $type)
+		/**
+		 * Loads classes via the constructor or through getInstance singleton method
+		 * 
+		 * @param type $name
+		 * @param array $args
+		 * @param type $type
+		 * @return type 
+		 */
+		private static function _loader($name, array $args=null, $type=null)
 		{
 			try{
 				$class = new ReflectionClass($name);

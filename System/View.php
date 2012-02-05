@@ -5,7 +5,7 @@
 	 * @version 1.0, 29th January 2012
 	 *
 	 * This class allows views to load elements, from their runtime state
-	 */		
+	 */
 	class View
 	{
 
@@ -21,8 +21,8 @@
 		{
 
 			if ($args !== null) {
-				$this->args = $args;
 				array_walk($args, 'XSSFilter::filter');
+				$this->args = $args;
 
 				extract($args);
 			}
@@ -31,7 +31,7 @@
 		}
 
 		/**
-		 * Load an element
+		 * Loads an element
 		 * 
 		 * @param string $name
 		 */
@@ -43,7 +43,7 @@
 				if (is_array($this->args)) {
 					extract($this->args);
 				}
-				
+
 				require $file;
 			} else {
 				throw new ElementException('Element not found - ' . $file);

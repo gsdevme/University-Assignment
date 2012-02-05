@@ -1,6 +1,13 @@
 <?php
 
 	/**
+	 *
+	 * ( \/ ) /  \(    \(  __)(  )     ___   / )( \(  )(  __)/ )( \   ___    / __)/  \ (  ( \(_  _)(  _ \ /  \ (  )  (  )  (  __)(  _ \
+	 * / \/ \(  O )) D ( ) _) / (_/\  (___)  \ \/ / )(  ) _) \ /\ /  (___)  ( (__(  O )/    /  )(   )   /(  O )/ (_/\/ (_/\ ) _)  )   /
+	 * \_)(_/ \__/(____/(____)\____/          \__/ (__)(____)(_/\_)          \___)\__/ \_)__) (__) (__\_) \__/ \____/\____/(____)(__\_)
+	 * 
+	 * MVC: http://www.youtube.com/watch?v=YYvOGPMLVDo
+	 *
 	 * @author Gavin Staniforth <Email:gsdev@me.com> <Arpanet:http://gsdev.me> @gsphpdev
 	 * @version 1.0, 29th January 2012
 	 *
@@ -44,13 +51,15 @@
 			->addFileLocation('Application/Libraries/')
 			->addFileLocation('Application/Structures/');
 
+		// Lets get our route from REQUEST_URI
 		$router = new Router(new Request($bootstrap));
 
+		// Ok lets load it !!!!
 		ControllerFactory::route($router->getRoute());
 
 		// Remove variable from memory
 		unset($router);
-		unset($bootstrap);		
+		unset($bootstrap);
 	} catch (Exception $e) {
 		$obStatus = ob_get_status();
 
@@ -61,8 +70,8 @@
 			}
 		}
 
-		if($debug !== true){
-			switch($e->getCode() ){
+		if ($debug !== true) {
+			switch ($e->getCode()) {
 				case 404:
 					ControllerFactory::notFound(array($e));
 					exit;

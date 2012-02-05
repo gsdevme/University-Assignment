@@ -7,13 +7,14 @@
 	 * This is file is used to assign the default Controller/Method.
 	 * It then checks against a null request
 	 * 
-	 */	
+	 */
 	class Router
 	{
 
 		private $_route, $_defaultController, $_defaultMethod;
 
 		/**
+		 * Explodes and sets up the route array
 		 * 
 		 * @param Request $request 
 		 */
@@ -24,9 +25,9 @@
 
 			// If there is no request parameter, else assign
 			$this->_route = ($request->getRequest() !== null) ? explode('/', $request->getRequest()) : array($this->_defaultController, $this->_defaultMethod);
-			
+
 			// If no method is within the request
-			if(count($this->_route) < 2){
+			if (count($this->_route) < 2) {
 				array_push($this->_route, $this->_defaultMethod);
 			}
 
@@ -44,11 +45,11 @@
 		}
 
 		/**
-		* This method will call urldecode upon the value.. 
-		*
-		* @param string $value This is urlenoded string
-		* @return string
-		*/
+		 * This method will call urldecode upon the value.. 
+		 *
+		 * @param string $value This is urlenoded string
+		 * @return string
+		 */
 		private static function _urldecode($value)
 		{
 			return urldecode($value);

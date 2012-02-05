@@ -6,7 +6,7 @@
 	 *
 	 * This class is used to filter the value for cross site scripting attacks, 
 	 * to protect our users from javascript attacks and such
-	 */	
+	 */
 	class XSSFilter
 	{
 

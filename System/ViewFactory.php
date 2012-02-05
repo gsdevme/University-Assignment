@@ -5,7 +5,7 @@
 	 * @version 1.0, 29th January 2012
 	 *
 	 * This class is used to store the View data and then allow the method render() to instantiate them
-	 */		
+	 */
 	class ViewFactory
 	{
 
@@ -21,8 +21,8 @@
 		}
 
 		/**
-		* Singleton ftw
-		*/
+		 * Singleton ftw
+		 */
 		public static function getInstance()
 		{
 			if (!self::$_instance instanceof self) {
@@ -66,7 +66,7 @@
 		{
 			if (!empty($this->_views)) {
 				ob_start(create_function('$buffer', 'return preg_replace(\'#(?ix)(?>[^\S ]\s*|\s{2,})(?=(?:(?:[^<]++|<(?!/?(?:textarea|pre)\b))*+)(?:<(?>textarea|pre)\b|\z))#\', null, $buffer);'));
-				
+
 				foreach ($this->_views as $view) {
 					new View($view->file, $view->args);
 				}

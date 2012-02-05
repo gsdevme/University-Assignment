@@ -6,7 +6,7 @@
 	 *
 	 * This class is used like an factory pattern class and creates objects, 
 	 * it uses reflection to 'make it so' (ha clever comment joke...)
-	 */		
+	 */
 	class ControllerFactory
 	{
 
@@ -17,7 +17,7 @@
 		 * @return object
 		 */
 		public static function route(array $route)
-		{			
+		{
 			// Store actual Route, within the REQUEST_URI server
 			Bootstrap::getInstance()->setServerUri(implode('/', $route));
 
@@ -47,7 +47,7 @@
 			}
 
 			$route = func_get_args();
-			
+
 			throw new RouterException('The controller/method could not be found | ' . implode('::', array_slice($route[0], 0, 2)) . '()', 404, ifsetor($e));
 		}
 
@@ -62,7 +62,7 @@
 			$route = array_merge(array(
 				'NotFound',
 				'index'
-			), $args);
+				), $args);
 
 			return ControllerFactory::route($route);
 		}
