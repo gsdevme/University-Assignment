@@ -22,8 +22,16 @@
 		*/
 		public static function model($name, array $args=null)
 		{
-			$name = ucfirst($name) . 'Model';
-				
+			return self::_loader(ucfirst($name) . 'Model', $args, 'model');	
+		}
+
+		public static function library($name, array $args=null)
+		{
+			return self::_loader(ucfirst($name), $args, 'library');	
+		}
+
+		private static function _loader($name, array $args=null, $type)
+		{
 			try{
 				$class = new ReflectionClass($name);
 
@@ -37,17 +45,12 @@
 					return call_user_func_array(array($name, 'getInstance'), $args);
 				}				
 
-				throw new FactoryException('The model ' . $name . ' was found but we couldn\'t create an instance nor did we find a method getInstance() for singleton.', 500);				
+				throw new FactoryException('The ' . $type . ' ' . $name . ' was found but we couldn\'t create an instance nor did we find a method getInstance() for singleton.', 500);				
 			}catch(ClassNotFoundException $e){
 				
 			}
 
-			throw new FactoryException('The Factory could not find the Model named ' . $name, 500, ifsetor($e));
-		}
-
-		public static function library($name, array $args=null)
-		{
-			
+			throw new FactoryException('The Factory could not find the ' . $type . ' named ' . $name, 500, ifsetor($e));			
 		}
 
 	}
