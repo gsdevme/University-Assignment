@@ -26,17 +26,29 @@ a{
 }
 
 html,body{
+	background:#FAFAFA;
 	height:100%;
 	font-family: Helvetica, Arial, sans-serif;	
-}
-
-header{
-	background:#606b7c;
 }
 
 .container-960{
 	width:960px;
 	margin:0 auto;
+}
+
+.container-960.mainpage{
+	width:980px;
+	padding:10px;
+	background:#FFF;
+}
+
+#left{
+	display:inline-block;
+	width:600px;
+}
+
+header{
+	background:#606b7c;
 }
 
 header h1 a, header h2{
@@ -83,4 +95,40 @@ header nav ul li a img{
 header nav ul li a:hover{
 	background:#e9e9e9;
 	color:#353f4b;
+}
+
+.holidays{
+	margin:0 0 12px 0;
+	padding:0 0 12px 0;
+	border-bottom:1px solid #E8E8E8;
+}
+
+.holidays img{
+	display:inline-block;
+	width:50px;
+	height:50px;
+	margin:0 10px 5px 0;
+	border:5px solid #dedede;
+}
+
+.holidays .text{
+	display:inline-block;
+	width:530px;
+	vertical-align:top;
+}
+
+.holidays .text h2{
+	text-transform:capitalize;
+	line-height:22px;
+}
+
+.holidays .text h4{
+	font-size:12px;
+	line-height:21px;
+	text-transform:capitalize;
+}
+
+.holidays .text p{
+	display:inline-block;
+	line-height:18px;
 }
