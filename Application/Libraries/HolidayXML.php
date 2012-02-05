@@ -25,6 +25,9 @@
 
 			// Lets check we got the XML, and HTTP CODE 200
 			if((!empty($data)) && (curl_getinfo($curl, CURLINFO_HTTP_CODE) == 200)){
+				//lets get some memory back !
+				curl_close($curl); 
+
 				try{
 					// throw error + clean NS
 					$this->_xml = new SimpleXMLElement($data, LIBXML_NSCLEAN | LIBXML_ERR_ERROR);
