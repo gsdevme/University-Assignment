@@ -11,8 +11,8 @@
 			$this->img = $this->url . 'Public/img/';
 			$this->js = $this->url . 'Public/js/';
 			
-			$breadcrumb = array(
-				$controller,
+			$this->breadcrumb = array(
+				array('home', 'Home'),
 			);
 			
 			parent::__construct($bootstrap, $controller, $method);

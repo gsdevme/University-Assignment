@@ -11,6 +11,7 @@
 
 		<!-- wrap our homepage within a 960 and mainpage -->
 		<div class="container-960 mainpage">
+			<?php $this->element('breadcrumb'); ?>
 
 			<!-- Left is left, limited to 600 pixels wide -->
 			<div id="left">
