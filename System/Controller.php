@@ -42,9 +42,9 @@
 		 * 
 		 * @return bool returns true once its completed and no errors etc
 		 */
-		protected function render()
+		protected function render(array $headers=null)
 		{
-			return ViewFactory::getInstance()->render();
+			return ViewFactory::getInstance()->render($headers);
 		}
 
 		/**
