@@ -40,7 +40,9 @@
 		$bootstrap->addFileLocation('System/')
 			->addFileLocation('System/Exceptions/')
 			->addFileLocation('Application/Controllers/')
-			->addFileLocation('Application/Models/');
+			->addFileLocation('Application/Models/')
+			->addFileLocation('Application/Libraries/')
+			->addFileLocation('Application/Structures/');
 
 		$router = new Router(new Request($bootstrap));
 
