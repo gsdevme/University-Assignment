@@ -1,6 +1,11 @@
 <meta charset="utf-8"/>
 <title><?php echo $title; ?></title>
 
+<meta name="description" content="<?php echo $description; ?>"/>
+<meta name="keywords" content="<?php echo $keywords; ?>"/>
+
+<link rel="author" href="<?php echo $url;?>Public/humans.txt">
+
 <link rel="shortcut icon" href="<?php echo $img; ?>favicon.ico" />	
 
 <!-- 
