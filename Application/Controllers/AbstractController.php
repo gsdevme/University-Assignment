@@ -2,13 +2,14 @@
 
 	abstract class AbstractController extends Controller
 	{
-		protected $title, $description, $keywords, $breadcrumb, $url, $css, $img;
+		protected $title, $description, $keywords, $breadcrumb, $url, $css, $img, $js;
 		
 		public function __construct(Bootstrap $bootstrap, $controller, $method)
 		{
 			$this->url = $bootstrap->getUrl();
 			$this->css = $this->url . 'Public/css/';
 			$this->img = $this->url . 'Public/img/';
+			$this->js = $this->url . 'Public/js/';
 			
 			$breadcrumb = array(
 				$controller,
@@ -27,6 +28,7 @@
 				'css' => $this->css,
 				'img' => $this->img,
 				'url' => $this->url,
+				'js' => $this->js
 			)));
 		}
 	}
