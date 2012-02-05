@@ -33,6 +33,14 @@
 		}
 
 		/**
+		* This is need so if an error occours we can clear the ViewFactory of views
+		*/
+		public static function deleteInstance()
+		{
+			self::$_instance = null;
+		}
+
+		/**
 		 * Add a view to the ADT Queue
 		 * 
 		 * @param string $name

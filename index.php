@@ -70,6 +70,8 @@
 			}
 		}
 
+		ViewFactory::deleteInstance();
+
 		if ($debug !== true) {
 			switch ($e->getCode()) {
 				case 404:
