@@ -22,6 +22,7 @@
 		/**
 		 * for the Singleton class, so we can get the $_instance
 		 * 
+		 * @static
 		 * @param array $server
 		 * @return Bootstrap
 		 */
@@ -37,6 +38,7 @@
 		/**
 		 * Autoloader method will auto include the file we need for our class
 		 * 
+		 * @static
 		 * @param string $class
 		 * @return mixed 
 		 */
