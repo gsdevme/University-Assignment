@@ -5,8 +5,10 @@
 	</head>
 	
 	<body>		
-		<h1>Error</h1>
+		<h1>PHP Error</h1>
 
-		<?php pre($exception->getMessage()); ?>
+		<p><?php pre($exception->getMessage()); ?></p>
+
+		<?php echo '<pre>' . print_r($exception, true) . '</pre>'; ?>
 	</body>
 </html>
