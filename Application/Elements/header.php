@@ -14,5 +14,12 @@
 				<li><a href="<?php echo $url;?>holidays" title="Holidays">Holidays</a></li>
 			</ul>
 		</nav>	
+
+		<div id="accounts">
+			<ul>
+				<li><a href="<?php echo $url;?>auth/signup" title="Signup">Signup</a></li>
+				<li><a href="<?php echo $url;?>auth/login" title="Login">Login</a></li>
+			</ul>
+		</div>
 	</div>
 </header>
