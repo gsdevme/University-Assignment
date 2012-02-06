@@ -28,7 +28,8 @@
 				'css' => $this->css,
 				'img' => $this->img,
 				'url' => $this->url,
-				'js' => $this->js
+				'js' => $this->js,
+				'controller' => $this->controller
 			)));
 		}
 	}
