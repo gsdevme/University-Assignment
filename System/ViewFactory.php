@@ -83,7 +83,7 @@
 			}
 
 			if (!empty($this->_views)) {
-				ob_start(create_function('$buffer', 'return preg_replace(\'#(?ix)(?>[^\S ]\s*|\s{2,})(?=(?:(?:[^<]++|<(?!/?(?:textarea|pre)\b))*+)(?:<(?>textarea|pre)\b|\z))#\', null, $buffer);'));
+				ob_start(create_function('$buffer', 'return preg_replace(\'/<!--(.*?)-->/\', null, preg_replace(\'#(?ix)(?>[^\S ]\s*|\s{2,})(?=(?:(?:[^<]++|<(?!/?(?:textarea|pre)\b))*+)(?:<(?>textarea|pre)\b|\z))#\', null, $buffer));'));
 
 				foreach ($this->_views as $view) {
 					new View($view->file, $view->args);
