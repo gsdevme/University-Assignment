@@ -60,7 +60,7 @@
 
 				// Hmm not public constructor, perhaps has a singleton style setup...
 				if($class->hasMethod('getInstance')){
-					return call_user_func_array(array($name, 'getInstance'), $args);
+					return call_user_func_array(array($name, 'getInstance'), (array)$args);
 				}				
 
 				throw new FactoryException('The ' . $type . ' ' . $name . ' was found but we couldn\'t create an instance nor did we find a method getInstance() for singleton.', 500);				
