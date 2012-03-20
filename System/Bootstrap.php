@@ -1,5 +1,12 @@
 <?php
 
+	/**
+	 * @author Gavin Staniforth <Email:gsdev@me.com> <Arpanet:http://gsdev.me> @gsphpdev
+	 * @version 1.0, 4th February 2012
+	 *
+	 * This class is used to bootstrap the server into a workable state, it also provides 
+	 * the autoloading and acts as registry for the application
+	 */	
 	class Bootstrap
 	{
 
@@ -53,7 +60,7 @@
 				}
 			}
 
-			throw new ClassNotFoundException('Class ' . $class . ' not found');
+			return (bool)false;
 		}
 
 		/**
