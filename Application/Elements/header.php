@@ -7,11 +7,10 @@
 		<!-- Navigation with two images instead of the text -->
 		<nav>
 			<ul>
-				<li><a href="<?php echo $url;?>home" title="Homepage"><img src="<?php echo $img;?>home.png" alt="Homepage"/></a></li>
-				<li><a href="<?php echo $url;?>favourite" title="Favourites"><img src="<?php echo $img;?>favourite.png" alt="Favourite"/></a></li>
-				<li><a href="<?php echo $url;?>whatson" title="What's On">What's On</a></li>
-				<li><a href="<?php echo $url;?>places" title="Places">Places</a></li>
-				<li><a href="<?php echo $url;?>holidays" title="Holidays">Holidays</a></li>
+				<li class="<?php echo ($controller == 'Home') ? 'active' : null; ?>"><a href="<?php echo $url;?>home" title="Homepage"><img src="<?php echo $img;?>home.png" alt="Homepage"/></a></li>
+				<li class="<?php echo ($controller == 'favourites') ? 'active' : null; ?>"><a href="<?php echo $url;?>favourites" title="Favourites"><img src="<?php echo $img;?>favourite.png" alt="Favourite"/></a></li>
+				<li class="<?php echo ($controller == 'whatson') ? 'active' : null; ?>"><a href="<?php echo $url;?>whatson" title="What's On">What's On</a></li>
+				<li class="<?php echo ($controller == 'places') ? 'active' : null; ?>"><a href="<?php echo $url;?>places" title="Places">Places</a></li>
 			</ul>
 		</nav>	
 
