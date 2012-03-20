@@ -67,21 +67,14 @@
 		*/
 		public function getHolidayObjects()
 		{
-			if($this->_xml instanceof SimpleXMLElement){
-				$items = $this->_xml->xpath('channel/item');
+			$items = (array)$this->getFeed();
+			$result = array();
 
-				if(!empty($items)){
-					$result = array();
-
-					foreach($items as $item){
-						array_push($result, new Holiday(get_object_vars($item)));
-					}
-
-					return new ArrayIterator($result);
-				}
+			foreach($items as $item){
+				array_push($result, new Holiday(get_object_vars($item)));
 			}
 
-			return null;			
+			return new ArrayIterator($result);			
 		}
 
 	}
