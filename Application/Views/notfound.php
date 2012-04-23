@@ -7,7 +7,7 @@
 	
 	<body>	
 		<!---
-			THIS VIEW IS ONLY USED FOR DISPLAYING EXCEPTIONS, NOTHING MORE
+			THIS VIEW IS ONLY USED FOR DISPLAYING 404 Errors
 		-->
 
 		<!-- load our header element, same across all pages -->
