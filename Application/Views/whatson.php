@@ -27,20 +27,9 @@
 				</p>
 			</div>
 
+			<!-- Right is right, limited to 340 pixels wide -->
 			<div id="right">
-				<div id="search">
-					<form action="<?php echo $url;?>search" method="post">						
-						<fieldset>
-							<input type="text" name="search" placeholder="Search:"/>
-						</fieldset>
-
-						<fieldset>
-							<input type="radio" name="searchby" value="title" checked="true"/><label>Title</label>
-							<input type="radio" name="searchby" value="description" /><label>Description</label>				
-							<input type="submit" value="Search"/>
-						</fieldset>						
-					</form>
-				</div>
+				<?php $this->element('right');?>
 			</div>
 		</div>
 
