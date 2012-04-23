@@ -21,7 +21,7 @@
 					<!-- Holiday class, with Image, Title, PubDate, Offer and Description -->
 					<div class="holidays">
 						<a href="<?php echo $holidays->current()->guid; ?>" target="_blank" title="<?php echo $holidays->current()->title; ?>">
-							<img src="<?php echo $img;?>transparent.gif" alt="<?php echo $holidays->current()->title; ?>" class="grabHolidayImages" title="<?php echo $url . 'proxy.php?url=' . $holidays->current()->guid; ?>"/>
+							<img src="<?php echo $img;?>transparent.gif" alt="<?php echo $holidays->current()->title; ?>" class="grabHolidayImages" data-holidays-image="<?php echo $url . 'proxy.php?url=' . $holidays->current()->guid; ?>"/>
 						</a>
 
 						<div class="text">
