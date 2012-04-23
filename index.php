@@ -6,14 +6,14 @@
 	 * / \/ \(  O )) D ( ) _) / (_/\  (___)  \ \/ / )(  ) _) \ /\ /  (___)  ( (__(  O )/    /  )(   )   /(  O )/ (_/\/ (_/\ ) _)  )   /
 	 * \_)(_/ \__/(____/(____)\____/          \__/ (__)(____)(_/\_)          \___)\__/ \_)__) (__) (__\_) \__/ \____/\____/(____)(__\_)
 	 * 
-	 * MVC: http://www.youtube.com/watch?v=YYvOGPMLVDo
+	 * MVC Song: http://www.youtube.com/watch?v=YYvOGPMLVDo
 	 *
 	 * @author Gavin Staniforth <Email:gsdev@me.com> <Arpanet:http://gsdev.me> @gsphpdev
 	 * @version 1.0, 29th January 2012
 	 *
 	 * This MVC Framework was created for use with PHP 5.2.6 due to University servers being PHP 5.2.6
 	 *
-	 * The Framework was adapted from my PHP 5.3.3+ framework named Panda. http://gsdev.me/
+	 * The Framework was adapted from my PHP 5.3.3+ framework named GiantPanda. https://github.com/gsdevme/GiantPanda
 	 *
 	 * This is the main target or any link, it includes some core configuration files and classes then 
 	 * creates an instance of the request & router to kickstart the MVC
@@ -70,6 +70,7 @@
 			}
 		}
 
+		// Since we might need to load another view & another view data
 		ViewFactory::deleteInstance();
 
 		if ($debug !== true) {
