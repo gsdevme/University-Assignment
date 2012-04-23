@@ -1,5 +1,12 @@
 <?php
 
+	/**
+	 * @author Gavin Staniforth <Email:gsdev@me.com> <Arpanet:http://gsdev.me> @gsphpdev
+	 * @version 1.0, 23rd April 2012
+	 *
+	 * This is used as a Struct might be used within C++, it offers a structure while also doing 
+	 * abit of parsing on the title to clean it up
+	 */	
 	class Holiday
 	{
 
