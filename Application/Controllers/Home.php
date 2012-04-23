@@ -1,8 +1,19 @@
 <?php
 
+	/**
+	 * @author Gavin Staniforth <Email:gsdev@me.com> <Arpanet:http://gsdev.me> @gsphpdev
+	 * @version 1.0, 23rd April 2012
+	 *
+	 * Home page controller
+	 */
 	class Home extends AbstractController
 	{
 
+		/**
+		 * Index page
+		 * 
+		 * Pulls the XML feed down then displays it.. nothing much more
+		 */
 		public function index()
 		{					
 			$this->title = 'Home - Second Rate Holidays';
