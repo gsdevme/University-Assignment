@@ -35,8 +35,5 @@
 
 		<!-- all thats left is our footer now.. -->
 		<?php $this->element('footer'); ?>
-
-		<script src="<?php echo $js;?>ajax.js"></script>
-		<script src="<?php echo $js;?>holidayImages.js"></script>
 	</body>
 </html>
