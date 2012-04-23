@@ -30,8 +30,8 @@
 						
 						// Assign the src to our image
 						el[img].src = 'http://www.numyspace.co.uk/~cgel1/holidays/' + regex.exec(html)[1];
-					}));				}
-			
+					}));				
+				}			
 			})(i);
 
 		}
