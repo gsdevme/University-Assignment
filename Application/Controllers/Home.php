@@ -20,7 +20,7 @@
 			$this->description = 'All inclusive holidays from egypt to jamaica, we provide some of the greatest holidays the world has the offer.';
 			$this->keywords = 'home, second, rate, holidays, package, deals, flight, inclusive, world';
 
-			$this->view('home', array(
+			$this->view('holidays', array(
 				'holidays' => Factory::library('HolidayXML')->getHolidayObjects(),
 			))->render();
 		}
