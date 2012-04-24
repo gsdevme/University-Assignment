@@ -26,14 +26,29 @@
 			$this->keywords = 'login, sighome, second, rate, holidays, package, deals, flight, inclusive, world';			
 		}		
 
-		public function login()
+		/**
+		 * Simple alias method
+		 */
+		public function index()
 		{
+			return $this->login();
+		}
+
+		public function login($alert=null)
+		{
+			$message = ($alert !== null) ? base64_decode(urldecode($alert)) : null;
+
+			// if already logged in, lets log them out
+			if($this->user){
+				return $this->logout();
+			}
+
 			$this->title = 'Login - Second Rate Holidays';
 
 			array_push($this->breadcrumb, array('auth/login', 'Login'));
 
 			// Do we have some POST data?
-			if(isset($_POST)){
+			if((isset($_POST)) && (!empty($_POST))){
 				if(($rs = Factory::model('Users')->authenticate()) === true){
 					$this->redirect('home');
 				}
@@ -69,6 +84,12 @@
 			$this->view('auth', array(
 				
 			))->render();			
+		}
+
+		public function logout()
+		{
+			$_SESSION = array();
+			$this->redirect('home');
 		}
 
 	}
