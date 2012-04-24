@@ -35,7 +35,7 @@
 			}
 
 			// Is there any users logged in?
-			if(isset($_SESSION['user'], $_SESSION['__ip_checksum'])){
+			if(isset($_SESSION['user'], $_SESSION['holidays'], $_SESSION['__ip_checksum'])){
 				// Lock sessions to IPs
 				if($_SESSION['__ip_checksum'] == sprintf('%u', crc32($bootstrap->getServerParam('remote_addr')))){
 
