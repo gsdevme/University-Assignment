@@ -263,10 +263,22 @@ footer{
 	border-bottom:1px solid #E8E8E8;
 }
 
+	.holidays .fav{
+		position:absolute;
+		width:530px;
+		height:0px;
+		z-index:1;
+	}
+
+		.holidays .fav a{
+			float:right;
+			text-align:center;
+		}
+
 	/**
 	 * Inline-block ftw, 50x50 image on the left
 	 */
-	.holidays img{
+	.holidays > a img{
 		display:inline-block;
 		width:50px;
 		height:50px;
@@ -287,6 +299,7 @@ footer{
 			font-size:10px;
 			font-weight:normal;
 			line-height:18px;
+			z-index:99;
 		}
 
 			.holidays .text h2 a{
