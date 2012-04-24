@@ -16,9 +16,15 @@
 
 		<div id="accounts">
 			<ul>
-				<li><a href="<?php echo $url;?>auth/signup" title="Signup">Signup</a></li>
-				<li><a href="<?php echo $url;?>auth/login" title="Login">Login</a></li>
+				<?php if(isset($user)): ?>
+					<li><a href="<?php echo $url;?>account" title="Account"><?php echo preg_replace('/\s(.)+/', null, $user->name); ?></a></li>
+					<li><a href="<?php echo $url;?>auth/logout" title="Logout">Logout</a></li>
+				<?php else: ?>
+					<li><a href="<?php echo $url;?>auth/signup" title="Signup">Signup</a></li>
+					<li><a href="<?php echo $url;?>auth/login" title="Login">Login</a></li>
+				<?php endif; ?>
 			</ul>
 		</div>
+
 	</div>
 </header>

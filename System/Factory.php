@@ -40,6 +40,15 @@
 		}
 
 		/**
+		 * Loads the database abstration 
+		 * @return Database
+		 */
+		public static function db()
+		{
+			return self::_loader('Database', array(Bootstrap::getInstance()));	
+		}
+
+		/**
 		 * Loads classes via the constructor or through getInstance singleton method
 		 * 
 		 * @static
