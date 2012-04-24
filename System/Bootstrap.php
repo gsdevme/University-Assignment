@@ -94,6 +94,9 @@
 			// Disable magic quotes (Lovely magic quotes enabled on the server.... a developers worst nightmare)
 			ini_set('magic_quotes_gpc', 0);
 
+			// Since its likely everyone at Uni will use the default might be best to do this
+			ini_set('session.name', 'w11025228');
+
 			return self::$_instance;
 		}
 
