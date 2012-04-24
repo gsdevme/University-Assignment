@@ -30,7 +30,7 @@
 			*/
 			$this->_offer = trim(substr(strrchr($this->_title, '|'), 2));
 
-			if(empty($this->_offer)){
+			if($this->_offer == null){
 				$this->_offer = trim(substr(strrchr($this->_title, '-'), 2));
 			}
 

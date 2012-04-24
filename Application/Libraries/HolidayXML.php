@@ -24,7 +24,7 @@
 			$data = curl_exec($curl);
 
 			// Lets check we got the XML, and HTTP CODE 200
-			if((!empty($data)) && (curl_getinfo($curl, CURLINFO_HTTP_CODE) == 200)){
+			if(($data) && (curl_getinfo($curl, CURLINFO_HTTP_CODE) == 200)){
 				//lets get some memory back !
 				curl_close($curl); 
 
@@ -37,7 +37,7 @@
 				}
 			}	
 			
-			throw new Exception('FF', 500, ifsetor($e));			
+			throw new Exception('XML failure', 500, ifsetor($e));			
 		}
 
 		public static function getInstance()
