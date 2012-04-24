@@ -14,7 +14,7 @@
 
 		public function authenticate()
 		{
-			if((isset($_POST['email'], $_POST['password'])) && ($_POST['email'] !== null) && ($_POST['password'] !== null)){
+			if((isset($_POST['email'], $_POST['password'])) && (!empty($_POST['email'])) && (!empty($_POST['password']))){
 				if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 					// Since theres no hashing going on with the example database its sad we dont need any sha512 or some salts :(
 					$result = Factory::db()->query('SELECT email, name, password, admin, lastlogin FROM subscriber WHERE email=? AND password=? LIMIT 1', $_POST['email'], $_POST['password']);
