@@ -62,6 +62,54 @@
 			return null;
 		}
 
+		public function searchFeed($search, $by)
+		{
+			if($this->_xml instanceof SimpleXMLElement){
+				switch ($by) {
+					case 'title':
+					default:
+						$by = 'title';
+						break;
+
+					case 'description':
+						$by = 'description';
+						break;
+				}
+
+				// Remove anything that isnt alphanumeric for security and such
+				$search = strtolower(preg_replace('/[^A-Z0-9]/i', null, $search));
+
+				// Since we dont have xPATH 2.0, need to use the crappy translate method
+				$items = $this->_xml->xpath('channel/item[contains(translate(' . $by . ', "ABCDEFGHJIKLMNOPQRSTUVWXYZ", "abcdefghjiklmnopqrstuvwxyz"), "' . $search . '")]');
+
+				if(!empty($items)){
+					$result = array();
+
+					// Again convert to a stupid object
+					foreach($items as $item){
+						array_push($result, new Holiday(get_object_vars($item)));
+					}
+
+					return new ArrayIterator($result);	
+				}
+			}
+
+			return null;			
+		}
+
+		public function getHolidayFromGuid($guid)
+		{
+			if($this->_xml instanceof SimpleXMLElement){
+				$holiday = $this->_xml->xpath('channel/item[guid="' . $guid . '"]');
+
+				if(!empty($holiday)){
+					return new Holiday(array_shift($holiday));
+				}
+			}
+
+			return null;
+		}
+
 		/**
 		* This method grabs the XML then converts it into a Holiday Object, for safe use in our View... as a stupid object
 		*/
