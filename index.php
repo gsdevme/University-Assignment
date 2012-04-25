@@ -19,7 +19,7 @@
 	 * creates an instance of the request & router to kickstart the MVC
 	 */
 	$root = realpath(dirname(__FILE__)) . '/';
-	$debug = true;
+	$debug = false;
 
 	require_once $root . 'functions.php';
 	require_once $root . 'connectionDetails.php';
@@ -74,14 +74,8 @@
 		ViewFactory::deleteInstance();
 
 		if ($debug !== true) {
-			switch ($e->getCode()) {
-				case 404:
-					ControllerFactory::notFound(array($e));
-					exit;
-				default:
-					die('Woops');
-					exit;
-			}
+			ControllerFactory::notFound(array($e));
+			exit(0);
 		}
 
 		ControllerFactory::route(array('error', 'index', $e));
