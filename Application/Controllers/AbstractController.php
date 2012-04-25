@@ -88,7 +88,8 @@
 				'url' => $this->url,
 				'js' => $this->js,
 				'controller' => $this->controller,
-				'user' => $this->user
+				'user' => $this->user,
+				'savedHolidays' => ifsetor($_SESSION['holidays']),
 			)));
 		}
 	}
