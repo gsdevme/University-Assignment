@@ -1,0 +1,160 @@
+* [31m73d2174 - (HEAD, master) Added Remote dev rewritebase (8 minutes ago) <Gavin Staniforth>[m
+* [31ma6e9908 - Updated connection details for live site (9 minutes ago) <Gavin Staniforth>[m
+* [31m135a322 - Disabled debug mode (9 minutes ago) <Gavin Staniforth>[m
+* [31m42c639a - Added some extensions to the style for the login (10 minutes ago) <Gavin Staniforth>[m
+* [31m730b436 - Added default checked for radios (14 minutes ago) <Gavin Staniforth>[m
+* [31mbd98d5a - Added a value for login (14 minutes ago) <Gavin Staniforth>[m
+* [31ma50505d - Fixed 'active' class (14 minutes ago) <Gavin Staniforth>[m
+* [31m1665713 - Search controller (15 minutes ago) <Gavin Staniforth>[m
+* [31mbf709ff - Remove image (15 minutes ago) <Gavin Staniforth>[m
+* [31m0013be6 - Added some dummy text (15 minutes ago) <Gavin Staniforth>[m
+* [31m7a83064 - Added a search feed, and get by GUID (15 minutes ago) <Gavin Staniforth>[m
+* [31m9c3ffff - Added comments (15 minutes ago) <Gavin Staniforth>[m
+* [31m1bcdee4 - Removed signup, and added comments (16 minutes ago) <Gavin Staniforth>[m
+* [31m7079cad - Added the savedHolidays into the view data (16 minutes ago) <Gavin Staniforth>[m
+* [31m4593b73 - Renamed holidays (16 minutes ago) <Gavin Staniforth>[m
+* [31m63e9c40 - Added favourites and changed holidays views (16 hours ago) <Gavin Staniforth>[m
+* [31m58cc0e3 - Added index() and logout() aswell changes within login() (16 hours ago) <Gavin Staniforth>[m
+* [31m369797f - Added Holidays into session check (16 hours ago) <Gavin Staniforth>[m
+* [31medfdb50 - added add & remove and css rules for them (21 hours ago) <Gavin Staniforth>[m
+* [31m87dc309 - empty() instead of the null check (23 hours ago) <Gavin Staniforth>[m
+* [31mf65dff8 - Added some comments to the css (23 hours ago) <Gavin Staniforth>[m
+* [31m721d6fd - Added some headings (23 hours ago) <Gavin Staniforth>[m
+* [31m9e603cb - Users model to login with and such (24 hours ago) <Gavin Staniforth>[m
+* [31m5367316 - Generic right column added (24 hours ago) <Gavin Staniforth>[m
+* [31m7612c6e - Added Auth (24 hours ago) <Gavin Staniforth>[m
+* [31m68c75e9 - Switched empty() for null checks (24 hours ago) <Gavin Staniforth>[m
+* [31mdfb6e95 - Added user property, and session validation (24 hours ago) <Gavin Staniforth>[m
+* [31m31c2bc6 - Added session.name, to prevent conflicts when the lecturer is testing the site (24 hours ago) <Gavin Staniforth>[m
+* [31maada1c4 - Added Database Abstraction Layer, with Exception (25 hours ago) <Gavin Staniforth>[m
+* [31ma7fa7f7 - added some html comments (2 days ago) <Gavin Staniforth>[m
+* [31mdb69086 - Removed JS, copy & paste job and they aint needed (2 days ago) <Gavin Staniforth>[m
+* [31m6b59d8c - Added data= instead of using the the title (2 days ago) <Gavin Staniforth>[m
+* [31m9f7926f - Added class file header (2 days ago) <Gavin Staniforth>[m
+* [31m47c0a62 - Background image for right blocks (2 days ago) <Gavin Staniforth>[m
+* [31m3bdbcb7 - Documentation file headers added (2 days ago) <Gavin Staniforth>[m
+* [31m4fe6d92 - Completed documentation (2 days ago) <Gavin Staniforth>[m
+* [31m6bbcbfa - Added comments (2 days ago) <Gavin Staniforth>[m
+* [31mdac6dee - Removed quick minifying regex (2 days ago) <Gavin Staniforth>[m
+* [31ma6b8bed - Added some more comments (2 days ago) <Gavin Staniforth>[m
+* [31md8a0249 - Whats page added (2 days ago) <Gavin Staniforth>[m
+* [31m974fb67 - Removed some unneeded code (5 weeks ago) <Gavin Staniforth>[m
+* [31m8d4be95 - Fixed navigation to fit controllers (5 weeks ago) <Gavin Staniforth>[m
+* [31mda05692 - Added comments (5 weeks ago) <Gavin Staniforth>[m
+* [31mffa3f14 - Added generic holiday image (5 weeks ago) <Gavin Staniforth>[m
+* [31m35dd04c - Renamed holiday view to home, changed in home controller (5 weeks ago) <Gavin Staniforth>[m
+* [31m36a24aa - Removed holiday controller/view, there isn't enough content to justify this page (5 weeks ago) <Gavin Staniforth>[m
+* [31m25accbe - removed exception on autoloader, added class header (5 weeks ago) <Gavin Staniforth>[m
+* [31m7ae421e - Added ipsum text into whatson (5 weeks ago) <Gavin Staniforth>[m
+* [31mf4446a5 - Added a holiday view, removed the home view then added a holiday controller (3 months ago) <Gavin Staniforth>[m
+* [31m074fe8c - Passed the controller name to all the views (3 months ago) <Gavin Staniforth>[m
+* [31mc5a834e - Added a login and signup link (3 months ago) <Gavin Staniforth>[m
+* [31m46af71c - Added some regex to remove the html comments (3 months ago) <Gavin Staniforth>[m
+* [31md8f559a - added a cast to the second parameter on call_user_func_array (3 months ago) <Gavin Staniforth>[m
+* [31mf5b0bc3 - Missed a static with the bootstrap (3 months ago) <Gavin Staniforth>[m
+* [31m005bb00 - breadcrumb element (3 months ago) <Gavin Staniforth>[m
+* [31mce140fb - ProxyCurl class to curl a URL then return the result as a string (3 months ago) <Gavin Staniforth>[m
+* [31m42dfa9b - Added @static within the comments, also fixed data type for a few things (3 months ago) <Gavin Staniforth>[m
+* [31m81b8fc8 - Added a breadcrumb into the abstract, and element (3 months ago) <Gavin Staniforth>[m
+* [31m52f88c4 - Added header 404 into the render() (3 months ago) <Gavin Staniforth>[m
+* [31m43e7bde - humans.txt added (3 months ago) <Gavin Staniforth>[m
+* [31mc8ca136 - Added meta for author, description & keywords (3 months ago) <Gavin Staniforth>[m
+* [31m2fb56a8 - Added the ability to pass headers within the render() (3 months ago) <Gavin Staniforth>[m
+* [31m51fdfc6 - Ajax function, Holiday images. HTML content for the home view (3 months ago) <Gavin Staniforth>[m
+* [31md1bee46 - Added $this->js property (3 months ago) <Gavin Staniforth>[m
+* [31m83e93ff - Added a deleteInstance method to reset the MVC (3 months ago) <Gavin Staniforth>[m
+* [31m719ff94 - Removed line break (3 months ago) <Gavin Staniforth>[m
+* [31mf9daaa3 - Holiday list output element (3 months ago) <Gavin Staniforth>[m
+* [31m55e9f76 - Added trace() output and simple NotFound (3 months ago) <Gavin Staniforth>[m
+* [31m488aa06 - Added some HTML comments (3 months ago) <Gavin Staniforth>[m
+* [31me093b67 - Proxy so the JS can grab the images (3 months ago) <Gavin Staniforth>[m
+* [31m81b1edc - added curl_close … forgot it (3 months ago) <Gavin Staniforth>[m
+* [31m7445a82 - Fully completed System with Comments. (Signed off 5th February 2012 2am) (3 months ago) <Gavin Staniforth>[m
+* [31m885ae1f - Error Controller & View (3 months ago) <Gavin Staniforth>[m
+* [31m0206850 - transparent gif for image trickery (3 months ago) <Gavin Staniforth>[m
+* [31m291a49b - Added some holiday class values, and added #left and .mainpage (3 months ago) <Gavin Staniforth>[m
+* [31m5ee345d - Calls the library HolidayXML and send it to the view (3 months ago) <Gavin Staniforth>[m
+* [31m8d5f3e4 - Added Models, Libraries & Structures into the fileLocation (3 months ago) <Gavin Staniforth>[m
+* [31m20d29b3 - Holiday object which ensures I'm not sending a XML object to the view. also cleans up the title (3 months ago) <Gavin Staniforth>[m
+* [31md68d360 - HolidayXML library to load the XML then parse into the objects i need (3 months ago) <Gavin Staniforth>[m
+* [31m9d5ff4e - Added _loader() method then append within both model() and library() method before calling (3 months ago) <Gavin Staniforth>[m
+* [31m5de82c5 - Added Factory class file comments (3 months ago) <Gavin Staniforth>[m
+* [31m68fc387 - Added some more comments (3 months ago) <Gavin Staniforth>[m
+* [31m770ca78 - Reordered the class properties (OCD) (3 months ago) <Gavin Staniforth>[m
+* [31m5fb91eb - Added model location, and switch for getCode() added 404 and default for now (3 months ago) <Gavin Staniforth>[m
+* [31mcf49820 - Added model method with the factory to load models... (3 months ago) <Gavin Staniforth>[m
+* [31ma52e680 - Added a factory exception (3 months ago) <Gavin Staniforth>[m
+* [31md6384f4 - Added documentation for the methods, removed shortcuts for model & library (don't really see a point anymore) (3 months ago) <Gavin Staniforth>[m
+* [31m0f60e11 - Added some more documentation (3 months ago) <Gavin Staniforth>[m
+* [31ma40a8f8 - edits to the memory and bootstrap (3 months ago) <Gavin Staniforth>[m
+* [31mc066460 - Style.css with Images & Font (3 months ago) <Gavin Staniforth>[m
+* [31mb327426 - Reset CSS (3 months ago) <Gavin Staniforth>[m
+* [31m8a39fdd - Error view (3 months ago) <Gavin Staniforth>[m
+* [31m3c54b45 - Footer, Header & Meta elements (3 months ago) <Gavin Staniforth>[m
+* [31mee90096 - Added Notfound & Home Views (3 months ago) <Gavin Staniforth>[m
+* [31m7349d25 - Added Home, NotFound & Error Controllers (3 months ago) <Gavin Staniforth>[m
+* [31m08c8e51 - Added ServerUri, fixed method call (3 months ago) <Gavin Staniforth>[m
+* [31ma3e58b4 - Removed Cache (cba with it) added Minification (3 months ago) <Gavin Staniforth>[m
+* [31m0a10956 - Added $cache param (3 months ago) <Gavin Staniforth>[m
+* [31m9086885 - Removed dependency on $_SERVER (3 months ago) <Gavin Staniforth>[m
+* [31me99fd62 - Fixes Methode name to allow it to work on PHP 5.2 and PHP 5.3 (3 months ago) <Gavin Staniforth>[m
+* [31md116204 - Included $_SERVER within bootstrap with a readonly method and one set (3 months ago) <Gavin Staniforth>[m
+* [31m9c6bf60 - Added docs, and added Library & Model methods (3 months ago) <Gavin Staniforth>[m
+* [31m9ac2b94 - Added Urlencode into the class & method (3 months ago) <Gavin Staniforth>[m
+* [31m106fb63 - Added Error & NotFound (3 months ago) <Gavin Staniforth>[m
+* [31mc2640da - Changed CSS and Image to use URL (3 months ago) <Gavin Staniforth>[m
+* [31ma2d5fd7 - Added documentation (3 months ago) <Gavin Staniforth>[m
+* [31m5affdee - Added url decode (3 months ago) <Gavin Staniforth>[m
+* [31mb1e9593 - Added Controller + Method into the invoke() (3 months ago) <Gavin Staniforth>[m
+* [31mf2ab02d - added setErrorException (3 months ago) <Gavin Staniforth>[m
+* [31mfaf7246 - Abstract controller which overloads View to help keep the theme throughout the site (3 months ago) <Gavin Staniforth>[m
+* [31m240f079 - Added error_handler (3 months ago) <Gavin Staniforth>[m
+* [31m7a0c9cc - Fixed view factory to be private (3 months ago) <Gavin Staniforth>[m
+* [31m5cd91fe - Changed bootstrap function to chain (3 months ago) <Gavin Staniforth>[m
+* [31md5c4a11 - Added some documentation, then also added self::$_instance into addFileLocaion to allow of for chaining (3 months ago) <Gavin Staniforth>[m
+* [31m776cbe0 - Added connectionDetails.php file as the assignment required (3 months ago) <Gavin Staniforth>[m
+* [31me7cb5b9 - Added docblock comments and file header (3 months ago) <Gavin Staniforth>[m
+* [31mfc2ce0d - Tried to turn off short tags but seems to have failed (3 months ago) <Gavin Staniforth>[m
+* [31mf702850 - used func_get_args() to build an error message (3 months ago) <Gavin Staniforth>[m
+* [31m978cc36 - Replace ::error with route(array) to save creating a new method (3 months ago) <Gavin Staniforth>[m
+* [31md3a68f4 - Added Controller + Method to the error output (3 months ago) <Gavin Staniforth>[m
+* [31m3223397 - Added method for routing while at runtime with the MVC (3 months ago) <Gavin Staniforth>[m
+* [31m844b88d - Abstract controller to assign views and then render() them (3 months ago) <Gavin Staniforth>[m
+* [31m2581b29 - removed ucfirst() from method, added argument support and notFound method (3 months ago) <Gavin Staniforth>[m
+* [31mce4d286 - Fixed abstract with default code as 0 (3 months ago) <Gavin Staniforth>[m
+* [31m0ccec7a - Element Exception if the element doesn't exist (3 months ago) <Gavin Staniforth>[m
+* [31mf67a21c - View Exception called if any view problems occour (3 months ago) <Gavin Staniforth>[m
+* [31m4c65c9a - ViewObject, allows each view to load elements() and also parse all arguments with array_walk using the xssfilter (3 months ago) <Gavin Staniforth>[m
+* [31m69e54ac - ViewFactory, stores all the views with a method to render using ob_start (3 months ago) <Gavin Staniforth>[m
+* [31m09dbafd - Added XSS Filter to parse any arguments sent to the view (3 months ago) <Gavin Staniforth>[m
+* [31m84e21f5 - Added ob_get_status detection, fixed spelling in comment, and added further comments (3 months ago) <Gavin Staniforth>[m
+* [31mb606467 - Fixed mistype with dollar sign (3 months ago) <Gavin Staniforth>[m
+* [31mbd9aeea - More debug code in the controlller (3 months ago) <Gavin Staniforth>[m
+* [31m3415874 - Added Basic abstract controller (3 months ago) <Gavin Staniforth>[m
+* [31mad9cc7f - Removed ClassNotFoundException and added ExceptionAbstract, then added debug code into the catch() (3 months ago) <Gavin Staniforth>[m
+* [31me67153f - Added a blank line for OCD (3 months ago) <Gavin Staniforth>[m
+* [31m4e63ae2 - Exceptions For the MVC, ExceptionAbstract adds a previous to the class (3 months ago) <Gavin Staniforth>[m
+* [31m1965e49 - Added documentation (3 months ago) <Gavin Staniforth>[m
+* [31m06b21cc - Debug controller (3 months ago) <Gavin Staniforth>[m
+* [31mcdde3b9 - ControllerFactory to instantiate controllers (3 months ago) <Gavin Staniforth>[m
+* [31m2984e66 - Excception classes to help debugging (3 months ago) <Gavin Staniforth>[m
+* [31m97e3fdd - Changed include order. Added Application/Controllers within the autoloader path (3 months ago) <Gavin Staniforth>[m
+* [31mf28c10e - Removed route method for a better implementation with ControllerFactory (3 months ago) <Gavin Staniforth>[m
+* [31m48f1911 - Changed exception to ClassNotFoundException, and fixed root path (3 months ago) <Gavin Staniforth>[m
+* [31m6f2ba34 - Removed $file from exception output (3 months ago) <Gavin Staniforth>[m
+* [31m8d57687 - Fixed tabbing to 4 (3 months ago) <Gavin Staniforth>[m
+* [31m5e45be3 - Added abstract controller & model (3 months ago) <Gavin Staniforth>[m
+* [31m2873a4b - Moved bootstrap into System/ (3 months ago) <Gavin Staniforth>[m
+* [31m306a9b8 - Changed include to be Uppercase (3 months ago) <Gavin Staniforth>[m
+* [31m0573362 - Changed type hint to remove System_ (3 months ago) <Gavin Staniforth>[m
+* [31mbe824f9 - Changed the order of numyspace removal & clean() (3 months ago) <Gavin Staniforth>[m
+* [31m5f6f35d - Added Rewrite for SEO Friendly URLs (3 months ago) <Gavin Staniforth>[m
+* [31m2e70722 - Removed System_ prepend (3 months ago) <Gavin Staniforth>[m
+* [31mab9bba2 - Added fileLocations into the autoloader. Therefore you don't need to prepend the class with the folder if within Application/ or System/ (3 months ago) <Gavin Staniforth>[m
+* [31m961f91a - Explodes the request into an routing array (3 months ago) <Gavin Staniforth>[m
+* [31m3f9c993 - Target for routing, MVC Framework (3 months ago) <Gavin Staniforth>[m
+* [31m8c76422 - Request class, parses the request_uri and cleans then assigns to the classes property (3 months ago) <Gavin Staniforth>[m
+* [31mde13ea4 - Some little helper functions added, Sourced from my MVC 5.3.3 Framework https://github.com/JungleDevelopment/Panda (3 months ago) <Gavin Staniforth>[m
+* [31m8ac8b3d - Disables magic_quotes on Numyspace server (3 months ago) <Gavin Staniforth>[m
+* [31mfb34fcf - Bootstrap, sets up server environment also registers an autoloader. Configures the paths for either Local & Numyspace (3 months ago) <Gavin Staniforth>[m
+* [31maabfd40 - Git Ignore (3 months ago) <Gavin Staniforth>[m

@@ -25,3 +25,6 @@
 		<p>Nulla a libero metus. Integer gravida tempor metus eget condimentum. Integer eget iaculis tortor. Nunc sed ligula sed augue rutrum ultrices eget nec odio.</p>
 	</div>
 </div>
+
+<h3><a href="<?php echo $url;?>readme.txt">readme.txt for the assignment is provided here</a></h3>
+<h3><a href="<?php echo $url;?>git.log.txt">GIT Commit log here</a></h3>
