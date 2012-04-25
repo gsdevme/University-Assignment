@@ -34,6 +34,11 @@
 			return $this->login();
 		}
 
+		/**
+		 * Method to login and such
+		 * 
+		 * @param  string $alert=null
+		 */
 		public function login($alert=null)
 		{
 			$message = ($alert !== null) ? base64_decode(urldecode($alert)) : null;
@@ -75,17 +80,9 @@
 			))->render();
 		}
 
-		public function signup()
-		{
-			$this->title = 'Register - Second Rate Holidays';
-
-			array_push($this->breadcrumb, array('auth/signup', 'Signup'));
-
-			$this->view('auth', array(
-				
-			))->render();			
-		}
-
+		/**
+		 * Removes any data from the session then redirects to the homepage.
+		 */
 		public function logout()
 		{
 			$_SESSION = array();
