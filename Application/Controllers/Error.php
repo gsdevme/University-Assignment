@@ -9,6 +9,11 @@
 	class Error extends AbstractController
 	{
 
+		/**
+		 * Handles an exception as an argument then displays it
+		 * 
+		 * @param  [type] $exception=null [description]
+		 */
 		public function index(Exception $exception=null)
 		{			
 			$this->view('error', array('exception' => $exception))->render();

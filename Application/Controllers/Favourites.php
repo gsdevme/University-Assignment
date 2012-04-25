@@ -9,6 +9,13 @@
 	class Favourites extends AbstractController
 	{
 
+		/**
+		 * Override the constructor to add a breadcrumb and secure for users only
+		 * 
+		 * @param Bootstrap $bootstrap
+		 * @param string $controller
+		 * @param string $method 
+		 */
 		public function __construct(Bootstrap $bootstrap, $controller, $method)
 		{
 			parent::__construct($bootstrap, $controller, $method);
@@ -17,6 +24,8 @@
 			if(!$this->user){
 				$this->redirect('auth/login/' . urlencode(base64_encode('In order to view favourites you must login')));				
 			}
+
+			array_push($this->breadcrumb, array('favourites', 'Favourites'));
 		}
 
 		/**
@@ -40,6 +49,11 @@
 			))->render();			
 		}
 
+		/**
+		 * Toggles the favourite to add or remove
+		 * 
+		 * @param  string $guid 
+		 */
 		public function toggle($guid)
 		{
 			$guid = base64_decode(urldecode($guid));

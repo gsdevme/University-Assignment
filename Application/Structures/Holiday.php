@@ -10,17 +10,33 @@
 	class Holiday
 	{
 
-		private $_id, $_title, $_offer, $_link, $_description, $_pubDate, $_guid;
+		private $_id, $_title, $_xmlTitle, $_offer, $_link, $_description, $_pubDate, $_guid;
 
+		/**
+		 * Does some parsing and processing to make the data more usable
+		 * 
+		 * @param array $item
+		 */
 		public function __construct($item)
 		{
 			foreach($item as $property => $value){
 				$name = '_' . $property;
 
 				if(property_exists($this, $name)){
-					$this->$name = $value;
+					$this->$name = ( string )$value;
 				}			
 			}
+
+			if($this->_guid === null){
+				$this->_guid = $this->_link;
+			}
+
+			$this->_xmlTitle = $this->_title;
+
+			/**
+			 * For some reason the times within the PubDate are not to standard they contain "Weds" and "Tues".. so fix that
+			 */
+			$this->_pubDate = date('F j, Y, g:i a', strtotime(str_replace(array('Weds', 'Tues'), array('Wed', 'Tue'), $this->_pubDate)));
 
 			/*
 			* Lets try and parse out the offer from the title... (could explode it but wont be as fast)
@@ -37,12 +53,17 @@
 			// Now lets remove the offer sttring from the title
 			$this->_title = trim(substr(str_replace($this->_offer, null, $this->_title), 0, -3));
 
-			// Lets create an integer ID based upon the GUID.... (which it if its a real one shouldn't change)
+			// Lets create an integer ID based upon the GUID.... (which if its a real one shouldn't change)
 			if(!isset($this->_id)){
 				$this->_id = sprintf('%u', crc32($this->_guid));
 			}
 		}
 
+		/**
+		 * Provides read-only access to the properties
+		 * @param  string $name
+		 * @return mixed
+		 */
 		public function __get($name)
 		{
 			$name = '_' . $name;
