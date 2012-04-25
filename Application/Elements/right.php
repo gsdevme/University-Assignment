@@ -1,12 +1,12 @@
 <div id="search">
 	<form action="<?php echo $url;?>search" method="post">						
 		<fieldset>
-			<input type="text" name="search" placeholder="Search:"/>
+			<input type="text" name="search" placeholder="Search:" value="<?php echo ifsetor($_POST['search']); ?>"/>
 		</fieldset>
 
 		<fieldset>
-			<input type="radio" name="searchby" value="title" checked><label>Title</label>
-			<input type="radio" name="searchby" value="description"><label>Description</label>				
+			<input type="radio" name="searchby" value="title" <?php echo ((isset($_POST['searchby'])) && ($_POST['searchby'] == 'description')) ? null : 'checked';?>><label>Title</label>
+			<input type="radio" name="searchby" value="description" <?php echo ((isset($_POST['searchby'])) && ($_POST['searchby'] == 'description')) ? 'checked' : null;?>><label>Description</label>				
 			<input type="submit" value="Search"/>
 		</fieldset>						
 	</form>
