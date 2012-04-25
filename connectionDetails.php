@@ -9,7 +9,7 @@
 	 * added to the bootstrap then its removed
 	 */
 	$PDOConnection = ( object ) array(
-			'dns' => 'mysql:dbname=test;host=127.0.0.1',
-			'user' => 'root',
-			'pass' => 'lemonSticks'
+			'dns' => 'mysql:dbname=unn_w11025228;host=127.0.0.1',
+			'user' => 'unn_w11025228',
+			'pass' => 'polymorphism'
 	);
