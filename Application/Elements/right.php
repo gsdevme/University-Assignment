@@ -30,7 +30,6 @@
 	<ul>
 
 		<li><a href="#increase" onclick="font.increase();return false;">Increase Font Size</a></li>
-		<li><a href="#decrease" onclick="font.decrease();return false;">Decrease Font Size</a></li>
 	</ul>
 </div>
 
