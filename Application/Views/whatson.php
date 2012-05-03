@@ -38,5 +38,6 @@
 
 		<!-- all thats left is our footer now.. -->
 		<?php $this->element('footer'); ?>
+		<script src="<?php echo $js;?>font.js"></script>
 	</body>
 </html>

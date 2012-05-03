@@ -64,5 +64,6 @@
 
 		<script src="<?php echo $js;?>ajax.js"></script>
 		<script src="<?php echo $js;?>holidayImages.js"></script>
+		<script src="<?php echo $js;?>font.js"></script>
 	</body>
 </html>
