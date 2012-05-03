@@ -26,6 +26,9 @@
 					$result = Factory::db()->query('SELECT email, name, password, admin, lastlogin FROM subscriber WHERE email=? AND password=? LIMIT 1', $_POST['email'], $_POST['password']);
 
 					if($result !== null){
+						// Need to update LastLong
+						Factory::db()->query('UPDATE subscriber SET lastlogin=NOW() WHERE email=? LIMIT 1', $_POST['email']);
+
 						$_SESSION['user'] = ( object )array_shift($result);
 
 						$this->_registerSavedHolidaysChecksum();
