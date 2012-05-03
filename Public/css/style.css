@@ -320,6 +320,20 @@ footer{
 			line-height:18px;
 		}
 
+.fontsize ul{
+	list-style-type:none;
+	margin:0 0 25px 0;
+}	
+
+.fontsize ul li{
+	display:block;
+	padding:6px 0;
+	margin:0 0 15px 0;
+	font-size:16px;
+	text-align:center;
+	background:#dedede;
+}	
+
 /**
  * Right column image affect
  */
