@@ -1,3 +1,10 @@
+Written in Jan-May 2012.
+
+This was written for my PHP assignment, it had to work on PHP 5.2.6 and required 
+some odd things like a connectionDetails.php and other things which you normally 
+wouldn't do
+
+
 Development was done with Firefox & Chrome on the Mac platform.
 
 The CSS needs to be checked against CSS Level 3
